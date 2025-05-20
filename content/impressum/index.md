@@ -4,7 +4,6 @@ weight=2
 extra.footer_nav=true
 +++
 {% block_1c(title="Herausgeber" bg="white")%}
-# Herausgeber
 Angaben gemäß § 5 TMG
 
 This website is administered by:
