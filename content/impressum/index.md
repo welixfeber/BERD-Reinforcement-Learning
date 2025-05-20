@@ -3,7 +3,7 @@ title="Impressum"
 weight=2
 extra.footer_nav=true
 +++
-{% padded_block() %}
+{% block_1c(title="Herausgeber" bg="white")%}
 # Herausgeber
 Angaben gemäß § 5 TMG
 
