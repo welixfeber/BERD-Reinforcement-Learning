@@ -1,5 +1,6 @@
-name: Build and deploy to GitHub pages
+name: Build and deploy to GitHub Pages
 
+# Give GitHub Actions permission to push to your repo & Pages branch
 permissions:
   contents: write
   pages: write
@@ -11,22 +12,28 @@ on:
 
 jobs:
   build:
-    name: Publish site
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
+      # 1) Check out your source
+      - uses: actions/checkout@v4
         with:
-          persist-credentials: true
+          persist-credentials: true   # make GITHUB_TOKEN available for pushes
 
-      - name: disable Jekyll on Pages
-        run: |
-          # make sure GitHub Pages won't try to run Jekyll
-          touch public/.nojekyll
+      # 2) Install Zola
+      - name: Install Zola
+        uses: webfreak124/zola-action@v2
+        with:
+          version: "0.17.2"
 
-      - name: build_and_deploy
-        uses: shalzz/zola-deploy-action@v0.17.2
-        env:
-          PAGES_BRANCH: gh-pages
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # 3) Build the site
+      - name: Build with Zola
+        run: zola build
+
+      # 4) Deploy to gh-pages, skipping Jekyll
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          skip_jekyll: true
