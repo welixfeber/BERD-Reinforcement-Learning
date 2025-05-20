@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://privacyperceptions.org/"
+base_url = "hhttps://berd-nfdi.github.io/turning-pdfs-into-research-data.io/"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -17,16 +17,16 @@ highlight_code = false
 
 [extra]
 # Put all your custom variables here
-site_title = "Transatlantic Privacy Perceptions"
-site_logo = "assets/logo_full.svg"
+site_title = "Turning PDFs into Research Data"
+site_logo = "assets/BERD_academy_logo_green.png"
 site_logo_1 = "assets/BERD_academy_logo.png"
 site_logo_2 = "assets/BERD_nfdi_logo_large.png"
 site_logo_3 = "assets/TurningPDFs_text_big.png"
-site_logo_footer = "assets/mark_white.svg"
-site_logo_alt = "BERD Panel Logo"
-site_logo_sr = "BERD Panel Logo"
+site_logo_footer = "assets/BERD_academy_logo.png"
+site_logo_alt = "BERD Academy"
+site_logo_sr = "BERD Academy"
 site_tagline = ""
-copyright = "2024&ndash; Transatlantic Privacy Perceptions. All rights reserved."
+copyright = "2025&ndash; BERD Academy. All rights reserved."
 # Additional call to action in site navigation
 #header_cta = "Contact"
 #header_cta_href = "contact"
