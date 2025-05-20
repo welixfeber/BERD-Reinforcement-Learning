@@ -1,6 +1,5 @@
 name: Build and deploy to GitHub pages
 
-# allow the built-in token to push to your repo and Pages branch
 permissions:
   contents: write
   pages: write
@@ -18,9 +17,13 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-        # ensure the token is available for pushes (this is the default)
         with:
           persist-credentials: true
+
+      - name: disable Jekyll on Pages
+        run: |
+          # make sure GitHub Pages won't try to run Jekyll
+          touch public/.nojekyll
 
       - name: build_and_deploy
         uses: shalzz/zola-deploy-action@v0.17.2
