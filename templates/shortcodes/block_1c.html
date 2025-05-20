@@ -1,7 +1,14 @@
-<div class="flex flex-wrap {% if color %}text-{{color}}{% endif %} {% if bg %}bg-{{bg}}{% endif %} pl-4 sm:pl-6 md:pl-8 lg:pl-12">
-    {% if title %}
-    <h3 class="text-xl block mb-12 w-full pl-4 sm:pl-6 md:pl-8 lg:pl-12">{{title}}</h3>
+{# templates/shortcodes/block_1c.html #}
+<div class="block-1c flex flex-wrap {% if color %}text-{{ color }}{% endif %} {% if bg %}bg-{{ bg }}{% endif %} pl-4 sm:pl-6 md:pl-8 lg:pl-12">
+  {% if title %}
+    <h3 class="text-xl block mb-12 w-full pl-4 sm:pl-6 md:pl-8 lg:pl-12">
+      {{ title }}
+    </h3>
+  {% endif %}
+
+  <div class="text-base leading-tight w-full mb-10 pl-4 sm:pl-6 md:pl-8 lg:pl-12">
+    {% if body %}
+      {{ body | markdown | safe }}
     {% endif %}
-    
-    <div class="text-base leading-tight w-full mb-10 pl-4 sm:pl-6 md:pl-8 lg:pl-12">{%if body %}{{ body | markdown | safe }}{% endif %}</div>
+  </div>
 </div>

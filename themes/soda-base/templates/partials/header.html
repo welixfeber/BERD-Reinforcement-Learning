@@ -5,16 +5,15 @@
             <span class="sr-only">{{ config.extra.site_logo_sr }}</span>
             {% if config.extra.site_logo_1 %}
             <span class=" inline-block">
-                <img class="inline-block h-8 mb-2" src="{{ config.base_url ~ config.extra.site_logo_1 }}">
-                <img class="inline-block h-8 mb-2" src="{{config.base_url ~ config.extra.site_logo_2 }}">
-                <img class="inline-block h-8 mb-2" src="{{config.base_url ~ config.extra.site_logo_3 }}">
-            </span> 
+                <img class="inline-block h-12 mb-3" src="{{ config.base_url ~ config.extra.site_logo_1 }}">
+                <img class="inline-block h-10 mb-3" src="{{config.base_url ~ config.extra.site_logo_3 }}">
+            </span>
             {% else %}
             <img class="h-8 w-auto" src="{{ config.base_url ~ config.extra.site_logo }}" alt="{{ config.extra.site_logo_alt }}">
             {% endif %}
         </a>
         <div class="flex lg:hidden">
-            <button type="button" popovertarget="global-menu" class="-m-2.5 text-base font-semibold inline-flex items-center justify-center rounded-md p-2.5 text-white hover:text-primary">
+            <button type="button" popovertarget="global-menu" class="-m-2.5 text-base font-bold inline-flex items-center justify-center rounded-md p-2.5 text-primary hover:text-accent">
                 <span class="sr-only">Open main menu</span>
                 MENU
                 <!--svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -28,7 +27,7 @@
             {% for nav_page in root.pages %}
             {#- Filter pages not meant for main nav -#}
             {% if nav_page.extra.main_nav %}
-            <a href="{% if current_url != nav_page.permalink %}{{ nav_page.permalink | safe }}{% else%}#{% endif %}" class="text-base leading-7 font-semibold {% if current_url == nav_page.permalink %}text-accent{% else%}text-white{% endif %} hover:text-primary">
+            <a href="{% if current_url != nav_page.permalink %}{{ nav_page.permalink | safe }}{% else%}#{% endif %}" class="text-base leading-7 font-semibold {% if current_url == nav_page.permalink %}text-accent{% else%}text-primary{% endif %} hover:text-accent">
                 {{ nav_page.title }}
             </a>
             {% endif %}
@@ -39,7 +38,7 @@
                 {{ config.extra.header_cta }}
             </a>
             {%- endif %}
-            <a href="{{config.base_url}}/news" class="text-base leading-7 font-semibold text-white hover:text-primary">News</a>
+            
         </div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
@@ -74,7 +73,7 @@
                         {% endif %}
                         {% endfor %}
                         {% endif %}
-                        <a href="{{config.base_url}}/news" class="-mx-3 block rounded-lg  px-4 py-3 text-base leading-7 font-semibold   {% if current_url == config.base_url~'/news' %}text-accent{% else%}text-gray-900 hover:text-accent{%endif%}">News</a>
+                        {#  <a href="{{config.base_url}}/news" class="-mx-3 block rounded-lg  px-4 py-3 text-base leading-7 font-semibold   {% if current_url == config.base_url~'/news' %}text-accent{% else%}text-gray-900 hover:text-accent{%endif%}">News</a> #}
                     </div>
                     {% if config.extra.header_cta -%}
                     <div class="py-6">

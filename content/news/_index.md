@@ -2,8 +2,8 @@
 title = "News"
 sort_by = "date"
 weight= 5
-extra.main_nav = true
-extra.bloglist = true
+extra.main_nav = false
+extra.bloglist = false
 +++
 {{news_feed(
 title="Latest news"

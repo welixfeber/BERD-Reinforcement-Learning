@@ -3,7 +3,6 @@
     <h3 class="uppercase text-sm block font-bold mb-12 w-full">{{title}}</h3>
     {% endif %}
     
-    <div class="text-xl leading-tight w-full  mb-10 lg:mb-0 lg:w-1/2 pl-0 lg:pr-8">{%if left_text %}{{left_text | markdown | safe }}{% endif %}</div>
-    <div class="w-full lg:w-1/2 pl-0 lg:pl-8 {% if right_bg_color %}bg-{{right_bg_color}}{% endif %}">{%if body %}{{ body | markdown  | safe   }}{% endif %}</div>
-    
+    <div class="text-xl leading-tight w-full  mb-10 lg:mb-0 lg:w-1/4 pl-0 lg:pr-8">{%if left_text %}{{left_text | markdown | safe }}{% endif %}</div>
+    <div class="w-full lg:w-3/4 pl-0 lg:pl-8 {% if right_bg_color %}bg-{{right_bg_color}}{% endif %}">{%if body %}{{ body | markdown  | safe   }}{% endif %}</div>
 </div>

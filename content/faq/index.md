@@ -1,7 +1,7 @@
 +++
 title = "FAQ"
 weight = 6
-extra.main_nav =true
+extra.main_nav = false
 +++
 {{ 
 accordion(

@@ -2,7 +2,7 @@
 title = "People"
 weight = 5
 extra.full_hero = false
-extra.main_nav = true
+extra.main_nav = false
 #extra.hide_title= true
 extra.sub_nav =["Team","Topic Partner"]
 +++

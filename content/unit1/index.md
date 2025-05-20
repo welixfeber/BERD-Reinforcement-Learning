@@ -1,0 +1,88 @@
++++
+title="Unit 1"
+weight=2
+extra.footer_nav=true
+extra.main_nav = true
+extra.sub_nav =["Meeting Information", "Slides and Readings", "Course Videos"]
++++
+
+{% title_block(title="Web Scraping and Bot Harvesting (Unit 1)" bg="white") %}
+placeholder
+{% end %}
+
+{{ anchor(title="Meeting Information")}}
+{% block_1c_nopad(title="Meeting (Unit 1)" bg="grey" class="mt-0") %}
+
+**March 13, 2025, 4:30pm – 5:30pm CET***
+
+Please find the information on how to join the zoom meeting in the corresponding e-mail.
+
+*Note the timezone if you are joining from outside of Germany.
+
+{% end %}
+
+{{ anchor(title="Slides and Readings")}}
+{% block_1c_nopad(title="Slides and Readings" bg="white" class="mb-0") %}
+<div class="w-full text-left" style="display: flex;">
+    <!-- Left vertical line -->
+    <div style="border-left: 2.5px solid #808285; padding-left: 16px;  margin-top: 10px">
+        <!-- Full report section -->
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <a class="text font-bold" style="text-decoration: none;">
+                Please find the slides for Unit 1 here:
+            </a>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+            <a href="https://github.com/vakleisch/va.kleisch.github.io/tree/main/slides" download class="text-blue-500">
+                Download here (PDF)
+            </a>
+        </div>
+        <br><br>
+        <!-- Citation section -->
+        <a class="text font-bold" style="text-decoration: none;">
+            Reading:
+        </a>
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px; margin-bottom: 0px">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+            Free web article providing detailed code examples of web scraping in Python: Python, R. (n.d.). A Practical Introduction to Web Scraping in Python – Real Python. Retrieved 3 June 2024, from: <br> https://realpython.com/python-web-scraping-practical-introduction/ <br> <br>
+            (Free web article providing detailed code examples of web scraping in Python.)
+        </div>
+        <br>
+    </div>
+</div>
+{% end %}
+
+
+{{ anchor(title="Course Videos")}}
+{% block_1c_nopad(title= "Course Videos" bg="grey" class="mt-0") %}
+
+## Unit 1-1: Course Information
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3emZUvgJJdY" title="Unit 1-1: Course introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br><br><br>
+
+## Unit 1-2: Introduction to Web Scraping
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6B7noM3bzzw" title="Unit 1-2: Introduction to Web Scraping" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br><br><br>
+
+## Unit 1-3: How Websites work
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3D4Fxx74SHU" title="Unit 1-3: How Websites work" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br><br><br>
+
+## Unit 1-4: Inspecting a Website
+<iframe width="560" height="315" src="https://www.youtube.com/embed/inuPyPlc6fs" title="Unit 1-4: Inspecting a Website" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br><br><br>
+
+## Unit 1-5: Things to Know
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QNr5xDoG2NE" title="Unit 1-5: Things to know" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{% end %}

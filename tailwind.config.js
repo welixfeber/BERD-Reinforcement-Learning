@@ -24,10 +24,10 @@ module.exports = {
         sans: ['"Assistant Variable"'],
       },
       colors: {
-        primary: '#071A2D',
-        secondary:'#FFD469',
+        primary: '#002c16',
+        secondary:'#ffd3e9',
         grey:'#F5F5F5',
-        accent:'#FFD469',
+        accent:'#ffd3e9',
       },
     },
   },
