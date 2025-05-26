@@ -6,14 +6,14 @@ extra.main_nav = true
 extra.sub_nav =["Meeting Information", "Slides and Readings", "Course Videos"]
 +++
 
-{% title_block(title="Web Scraping and Bot Harvesting (Unit 1)" bg="white") %}
+{% title_block(title="Multi-armed bandits and learning algorithms (Unit 1)" bg="white") %}
 placeholder
 {% end %}
 
 {{ anchor(title="Meeting Information")}}
-{% block_1c_nopad(title="Meeting (Unit 1)" bg="grey" class="mt-0") %}
+{% block_1c_nopad(title="Meeting" bg="grey" class="mt-0") %}
 
-**March 13, 2025, 4:30pm – 5:30pm CET***
+**June 17, 2025, 4:30pm – 5:30pm CEST***
 
 Please find the information on how to join the zoom meeting in the corresponding e-mail.
 
@@ -39,8 +39,52 @@ Please find the information on how to join the zoom meeting in the corresponding
                     <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
                 </svg>
             </span>
-            <a href="https://github.com/vakleisch/va.kleisch.github.io/tree/main/slides" download class="text-blue-500">
-                Download here (PDF)
+            <a href="https://github.com/welixfeber/BERD-PDFs-Research-Data/blob/main/content/unit1/relearn1-1.pdf" download class="text-blue-500">
+                Unit 1-1: Multi-armed bandits (PDF)
+            </a>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+            <a href="https://github.com/welixfeber/BERD-PDFs-Research-Data/blob/main/content/unit1/relearn1-2.pdf" download class="text-blue-500">
+                Unit 1-2: Greedy, e-greedy, decayed, e-greedy (PDF)
+            </a>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+            <a href="https://github.com/welixfeber/BERD-PDFs-Research-Data/blob/main/content/unit1/relearn1-3.pdf" download class="text-blue-500">
+                Unit 1-3: Upper Confidence Bound (PDF)
+            </a>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+            <a href="https://github.com/welixfeber/BERD-PDFs-Research-Data/blob/main/content/unit1/relearn1-4.pdf" download class="text-blue-500">
+                Unit 1-4: Thompson Sampling (PDF)
+            </a>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+            <a href="https://github.com/welixfeber/BERD-PDFs-Research-Data/blob/main/content/unit1/relearn1-5.pdf" download class="text-blue-500">
+                Unit 1-5: Inference with Batched Bandits (PDF)
             </a>
         </div>
         <br><br>
@@ -55,8 +99,7 @@ Please find the information on how to join the zoom meeting in the corresponding
                     <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
                 </svg>
             </span>
-            Free web article providing detailed code examples of web scraping in Python: Python, R. (n.d.). A Practical Introduction to Web Scraping in Python – Real Python. Retrieved 3 June 2024, from: <br> https://realpython.com/python-web-scraping-practical-introduction/ <br> <br>
-            (Free web article providing detailed code examples of web scraping in Python.)
+            No readings for this unit.
         </div>
         <br>
     </div>
@@ -67,22 +110,26 @@ Please find the information on how to join the zoom meeting in the corresponding
 {{ anchor(title="Course Videos")}}
 {% block_1c_nopad(title= "Course Videos" bg="grey" class="mt-0") %}
 
-## Unit 1-1: Course Information
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3emZUvgJJdY" title="Unit 1-1: Course introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+## Introduction to Reinforced Learning
+<iframe width="560" height="315" src="https://www.youtube.com/embed/68tVOESzcWM&list" title="Introduction to reinforced learning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br><br><br>
 
-## Unit 1-2: Introduction to Web Scraping
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6B7noM3bzzw" title="Unit 1-2: Introduction to Web Scraping" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+## Unit 1-1: Multi-armed bandits
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5V_qKCzS9Ps" title="Unit 1-1: Multi-armed bandits" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br><br><br>
 
-## Unit 1-3: How Websites work
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3D4Fxx74SHU" title="Unit 1-3: How Websites work" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+## Unit 1-2: Greedy, e-greedy, decayed, e-greedy
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EvSTdV4oF6k" title="Unit 1-2: Greedy, e-greedy, decayed, e-greedy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br><br><br>
 
-## Unit 1-4: Inspecting a Website
-<iframe width="560" height="315" src="https://www.youtube.com/embed/inuPyPlc6fs" title="Unit 1-4: Inspecting a Website" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+## Unit 1-3: Upper Confidence Bound
+<iframe width="560" height="315" src="https://www.youtube.com/embed/86B6XDMlSHY" title="Unit 1-3: Upper Confidence Bound" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br><br><br>
 
-## Unit 1-5: Things to Know
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QNr5xDoG2NE" title="Unit 1-5: Things to know" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+## Unit 1-4: Thompson Sampling
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lwWRwDAb40I" title="Unit 1-4: Thompson Sampling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br><br><br>
+
+## Unit 1-5: Inference with Batched Bandits
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dY6aNFg6SqU" title="Unit 1-5: Inference with Batched Bandits" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 {% end %}

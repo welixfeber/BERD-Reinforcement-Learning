@@ -17,7 +17,7 @@ highlight_code = false
 
 [extra]
 # Put all your custom variables here
-site_title = "Turning PDFs into Research Data"
+site_title = "Reinforcement Learning for Business, Economics, and Social Sciences"
 site_logo = "assets/BERD_academy_logo_green.png"
 site_logo_1 = "assets/BERD_academy_logo.png"
 site_logo_2 = "assets/BERD_nfdi_logo_large.png"
