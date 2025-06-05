@@ -140,11 +140,11 @@ Please find the information on how to join the zoom meeting in the corresponding
         <!-- Full report section -->
         <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
             <a class="text" style="text-decoration: none;">
-                Assignment 1: Multi-Armed Bandit Portfolio
+                Assignment 1: Multi-Armed Bandit Portfolio <br>
 Investers seek reward.
 How much should they put in which stock?
-When in doubt, be epsilon-greedy (or use Thompson sampling).
-Introduction
+When in doubt, be epsilon-greedy (or use Thompson sampling). <br><br>
+Introduction<br>
 In this project, you will implement Multi-Armed Bandit algorithms. You will use first epsilon-greedy (from lecture) to build a portfolio of stocks adaptively at a daily frequency. Then, you will use Thompson Sampling (from lecture) to compare the performance and some properties of the algorithms.
 Please find the instructions and code for the assignment here:
             </a>
