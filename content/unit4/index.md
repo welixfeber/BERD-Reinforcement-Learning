@@ -38,7 +38,7 @@ Please find the information on how to join the zoom meeting in the corresponding
                     <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
                 </svg>
             </span>
-            <a href="https://www.dropbox.com/scl/fo/8c9f5e6j6fw6ie05t9zu5/AGD-yhjxzDXZ61YfMImFYYQ/unit%204?dl=0&preview=relearn4+readings.txt&rlkey=d5yoglc7pmu12akogfqflfjo9&subfolder_nav_tracking=1" download class="text-blue-500">
+            <a href="" download class="text-blue-500">
             Readings Unit 4 (txt)
             </a>
         </div>
@@ -64,8 +64,8 @@ Please find the information on how to join the zoom meeting in the corresponding
                     <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
                 </svg>
             </span>
-            <a href="https://www.dropbox.com/scl/fo/8c9f5e6j6fw6ie05t9zu5/AOjpjsX6W_h-JLh9KexErgA/assignment%202?dl=0&rlkey=d5yoglc7pmu12akogfqflfjo9&subfolder_nav_tracking=1" download class="text-blue-500">
-                Dropbox Assignment Unit 4
+            <a href="" download class="text-blue-500">
+                Assignment Unit 4
             </a>
         </div>
     </div>

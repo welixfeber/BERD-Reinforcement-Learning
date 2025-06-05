@@ -99,7 +99,7 @@ Please find the information on how to join the zoom meeting in the corresponding
                     <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
                 </svg>
             </span>
-            <a href="https://www.dropbox.com/scl/fo/8c9f5e6j6fw6ie05t9zu5/AMF_4XtYg8U5WBSgJ5oYX_8/intro?dl=0&preview=relearn0+readings.txt&rlkey=d5yoglc7pmu12akogfqflfjo9&subfolder_nav_tracking=1" download class="text-blue-500">
+            <a href="" download class="text-blue-500">
                 Readings Unit 1 Part 1 (txt)
             </a>
         </div>
@@ -110,7 +110,7 @@ Please find the information on how to join the zoom meeting in the corresponding
                     <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
                 </svg>
             </span>
-           <a href="https://www.dropbox.com/scl/fo/8c9f5e6j6fw6ie05t9zu5/AHaCF_6F9iS0LtJd2IgIf_c/unit%201?dl=0&preview=relearn1+readings.txt&rlkey=d5yoglc7pmu12akogfqflfjo9&subfolder_nav_tracking=1" download class="text-blue-500">
+           <a href="" download class="text-blue-500">
                Readings Unit 1 Part 2 (txt)
             </a>
         </div>
