@@ -53,7 +53,7 @@ Please find the information on how to join the zoom meeting in the corresponding
                     <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
                 </svg>
             </span>
-            <a href="https://www.dropbox.com/scl/fo/8c9f5e6j6fw6ie05t9zu5/AFnTCJDZBnA7QcVHEb0gCQM/unit%203?dl=0&preview=relearn3+readings.txt&rlkey=d5yoglc7pmu12akogfqflfjo9&subfolder_nav_tracking=1" download class="text-blue-500">
+            <a href="" download class="text-blue-500">
                 Readings Unit 3 (txt)
             </a>
         </div>
