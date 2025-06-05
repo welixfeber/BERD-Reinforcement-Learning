@@ -46,8 +46,15 @@ Please find the information on how to join the zoom meeting in the corresponding
 </div>
 {% end %}
 
+{{ anchor(title="Course Videos")}}
+{% block_1c_nopad(title= "Course Videos" bg="grey" class="mt-0") %}
+
+Coming soon. 
+
+{% end %}
+
 {{ anchor(title="Assignments")}}
-{% block_1c_nopad(title="Assignments" bg="grey" class="mt-0") %}
+{% block_1c_nopad(title="Assignments" bg="white" class="mb-0") %}
 <div class="w-full text-left" style="display: flex;">
     <!-- Left vertical line -->
     <div style="border-left: 2.5px solid #808285; padding-left: 16px;  margin-top: 10px">
@@ -70,11 +77,4 @@ Please find the information on how to join the zoom meeting in the corresponding
         </div>
     </div>
 </div>
-{% end %}
-
-{{ anchor(title="Course Videos")}}
-{% block_1c_nopad(title= "Course Videos" bg="white" class="mb-0") %}
-
-Coming soon. 
-
 {% end %}
