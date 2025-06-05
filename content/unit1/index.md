@@ -124,7 +124,7 @@ Please find the information on how to join the zoom meeting in the corresponding
 {% block_1c_nopad(title= "Course Videos" bg="grey" class="mt-0") %}
 
 ## Introduction to Reinforced Learning
-<iframe width="560" height="315" src="https://www.youtube.com/embed/68tVOESzcWM&list" title="Introduction to reinforced learning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/68tVOESzcWM" title="Introduction to reinforced learning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br><br><br>
 
 ## Unit 1-1: Multi-armed bandits
