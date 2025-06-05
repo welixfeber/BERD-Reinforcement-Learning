@@ -90,7 +90,7 @@ Please find the information on how to join the zoom meeting in the corresponding
         <br><br>
         <!-- Citation section -->
         <a class="text font-bold" style="text-decoration: none;">
-            Reading:
+            Please find the required readings for this unit here:
         </a>
         <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px; margin-bottom: 0px">
             <span style="margin-right: 16px;">
@@ -99,7 +99,9 @@ Please find the information on how to join the zoom meeting in the corresponding
                     <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
                 </svg>
             </span>
-            No readings for this unit.
+           <a href="https://www.dropbox.com/scl/fo/8c9f5e6j6fw6ie05t9zu5/AHaCF_6F9iS0LtJd2IgIf_c/unit%201?dl=0&preview=relearn1+readings.txt&rlkey=d5yoglc7pmu12akogfqflfjo9&subfolder_nav_tracking=1" download class="text-blue-500">
+               Readings Unit 1 (txt)
+            </a>
         </div>
         <br>
     </div>
