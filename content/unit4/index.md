@@ -28,7 +28,7 @@ Please find the information on how to join the zoom meeting in the corresponding
         <!-- Full report section -->
         <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
             <a class="text font-normal" style="text-decoration: none;">
-                Coming soon.
+                Please find the required readings for unit 4 here:
             </a>
         </div>
         <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
@@ -38,7 +38,8 @@ Please find the information on how to join the zoom meeting in the corresponding
                     <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
                 </svg>
             </span>
-            <a href=" " download class="text-blue-500">
+            <a href="https://www.dropbox.com/scl/fo/8c9f5e6j6fw6ie05t9zu5/AGD-yhjxzDXZ61YfMImFYYQ/unit%204?dl=0&preview=relearn4+readings.txt&rlkey=d5yoglc7pmu12akogfqflfjo9&subfolder_nav_tracking=1" download class="text-blue-500">
+            Readings Unit 4 (txt)
             </a>
         </div>
     </div>

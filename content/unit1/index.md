@@ -29,7 +29,7 @@ Please find the information on how to join the zoom meeting in the corresponding
         <!-- Full report section -->
         <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
             <a class="text font-bold" style="text-decoration: none;">
-                Please find the slides for Unit 1 here:
+                Please find the slides for unit 1 here:
             </a>
         </div>
         <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
