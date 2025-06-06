@@ -100,7 +100,7 @@ Please find the information on how to join the zoom meeting in the corresponding
                     <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
                 </svg>
             </span>
-            <a href="" download class="text-blue-500">
+            <a href="https://github.com/BERD-NFDI/BERD-Reinforcement-Learning/blob/main/content/unit2/relearn2%20readings.txt" download class="text-blue-500">
                 Readings Unit 2 (txt)
             </a>
         </div>
