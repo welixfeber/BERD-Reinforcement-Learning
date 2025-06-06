@@ -1,0 +1,15 @@
+Sutton and Barto (2018, chapter 1)
+Szepesvari (2022, chapter 1)
+Charpentier et al. (2023)
+
+Sutton, R. S., and A. G. Barto (2018): Reinforcement learning: An
+introduction, A Bradford Book, Available at
+http://incompleteideas.net/book/the-book-2nd.html.
+
+Szepesvari, C. (2022): Algorithms for reinforcement learning. Springer
+nature, Available at
+https://sites.ualberta.ca/~szepesva/RLBook.html.
+
+Charpentier, A., R. Élie, and C. Remlinger (2023): Reinforcement
+learning in economics and finance, Computational Economics, 62(1),
+425–462.
