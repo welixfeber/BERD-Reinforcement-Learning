@@ -94,15 +94,19 @@ Please find the information on how to join the zoom meeting in the corresponding
         </a>
         <br><br>
         <a class="" style="text-decoration: none;">
-            Sutton and Barto (2018, chapter 1)
+            Sutton and Barto (2018, chapter 1 and sections 2.1-2.7, 2.9)
         </a>
         <br>
          <a class="" style="text-decoration: none;">
-            Szepesvari (2022, chapter 1)
+            Szepesvari (2022, chapter 1 and sections 4.2.1-4.2.2)
         </a>
         <br>
          <a class="" style="text-decoration: none;">
             Charpentier et al. (2023)
+        </a>
+        <br>
+        <a class="" style="text-decoration: none;">
+         Kemper and Rostam-Afschar (2025)
         </a>
         <br><br><br>
         <span>
@@ -137,6 +141,10 @@ Please find the information on how to join the zoom meeting in the corresponding
         <br><br>
         <span>
         Charpentier, A., R. Élie, and C. Remlinger (2023): Reinforcement learning in economics and finance, Computational Economics, 62(1), 425–462.
+        </span>
+        <br><br>
+        <span>
+        Kemper, J. and D. Rostam-Afschar (2025): Earning While Learning: How to Run Batched Bandit Experiments, University of Mannheim.
         </span>
         <br>
     </div>
