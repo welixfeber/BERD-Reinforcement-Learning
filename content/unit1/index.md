@@ -92,6 +92,22 @@ Please find the information on how to join the zoom meeting in the corresponding
         <a class="text font-bold" style="text-decoration: none;">
             Please find the required readings for this unit here:
         </a>
+        <br><br>
+        <a class="" style="text-decoration: none;">
+            Sutton and Barto (2018, chapter 1)
+        </a>
+        <br>
+         <a class="" style="text-decoration: none;">
+            Szepesvari (2022, chapter 1)
+        </a>
+        <br>
+         <a class="" style="text-decoration: none;">
+            Charpentier et al. (2023)
+        </a>
+        <br><br><br>
+        <span>
+        Sutton, R. S., and A. G. Barto (2018): Reinforcement learning: An introduction, A Bradford Book.
+        </span>
          <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
             <span style="margin-right: 16px;">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,10 +115,14 @@ Please find the information on how to join the zoom meeting in the corresponding
                     <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
                 </svg>
             </span>
-            <a href="https://github.com/BERD-NFDI/BERD-Reinforcement-Learning/blob/main/content/unit1/relearn0%20readings.txt" download class="text-blue-500">
-                Readings Unit 1 Part 1 (txt)
+            <a href="https://incompleteideas.net/book/the-book-2nd.html" download class="text-blue-500">
+                Available here.
             </a>
         </div>
+        <br><br>
+        <span>
+        Szepesvari, C. (2022): Algorithms for reinforcement learning. Springer nature.
+        </span>
         <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px; margin-bottom: 0px">
             <span style="margin-right: 16px;">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,10 +130,14 @@ Please find the information on how to join the zoom meeting in the corresponding
                     <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
                 </svg>
             </span>
-           <a href="https://github.com/BERD-NFDI/BERD-Reinforcement-Learning/blob/main/content/unit1/relearn1%20readings.txt" download class="text-blue-500">
-               Readings Unit 1 Part 2 (txt)
+           <a href="https://sites.ualberta.ca/~szepesva/RLBook.html" download class="text-blue-500">
+               Available here.
             </a>
         </div>
+        <br><br>
+        <span>
+        Charpentier, A., R. Élie, and C. Remlinger (2023): Reinforcement learning in economics and finance, Computational Economics, 62(1), 425–462.
+        </span>
         <br>
     </div>
 </div>
