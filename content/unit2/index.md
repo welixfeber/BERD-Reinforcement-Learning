@@ -91,8 +91,67 @@ Please find the information on how to join the zoom meeting in the corresponding
         <br><br>
         <!-- Citation section -->
         <a class="text font-bold" style="text-decoration: none;">
-            Please find the required readings for Unit 2 here:
+            Please find the required readings for this unit here:
         </a>
+        <br><br>
+        <a class="text font-bold" style="text-decoration: none;">
+            Markov Processes
+        </a>
+        <br>
+             <span>
+                Russell and Norvig (2016, section 15.1)
+            </span>
+        <br><br>
+         <a class="text font-bold" style="text-decoration: none;">
+            Markov decision processes
+        </a>
+        <br>
+        <span>
+        Russell and Norvig (2016, sections 17.1-17.2, 17.4) <br>
+        Sutton and Barto (2018, chapter 3) <br>
+        Szepesvari (2022, chapter 2) <br>
+        Puterman (2014, chapters 2, 4, 5) <br>
+        </span>
+         <br><br>
+         <a class="text font-bold" style="text-decoration: none;">
+            Value Iteration
+        </a>
+        <br>
+        <span>
+        Sutton and Barto (2018, sections 4.1, 4.4) <br>
+        Szepesvari (2022, sections 2.2, 2.3) <br>
+        Puterman (2014, sections 6.1-6.3) <br>
+        Sigaud and Buffet (2013, chapter 1) <br>
+        </span>
+         <br><br>
+         <a class="text font-bold" style="text-decoration: none;">
+            Policy Iteration
+        </a>
+        <br>
+        <span>
+        Sutton and Barto (2018, section 4.3) <br>
+        Puterman (2014, sections 6.4-6.5) <br>
+        Russell and Norvig (2016, section 17.3) <br>
+        </span>
+        <br><br><br>
+        <span>
+        Sutton, R. S., and A. G. Barto (2018): Reinforcement learning: An introduction, A Bradford Book.
+        </span>
+         <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+            <a href="https://incompleteideas.net/book/the-book-2nd.html" download class="text-blue-500">
+                Available here.
+            </a>
+        </div>
+        <br><br>
+        <span>
+        Szepesvari, C. (2022): Algorithms for reinforcement learning. Springer nature.
+        </span>
         <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px; margin-bottom: 0px">
             <span style="margin-right: 16px;">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,10 +159,30 @@ Please find the information on how to join the zoom meeting in the corresponding
                     <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
                 </svg>
             </span>
-            <a href="https://github.com/BERD-NFDI/BERD-Reinforcement-Learning/blob/main/content/unit2/relearn2%20readings.txt" download class="text-blue-500">
-                Readings Unit 2 (txt)
+           <a href="https://sites.ualberta.ca/~szepesva/RLBook.html" download class="text-blue-500">
+               Available here.
             </a>
         </div>
+        <br><br>
+        <span>
+        Puterman, M. L. (2014): Markov decision processes: discrete stochastic dynamic programming. John Wiley & Sons.
+        </span>
+        <br><br>
+        <span>
+        Sigaud, O., and O. Buffet (2013): Markov decision processes in artificial intelligence. John Wiley & Sons.
+        </span>
+        <br><br>
+        <span>
+        Markov, A. A. (2006): An Example of Statistical Investigation of the Text Eugene Onegin Concerning the Connection of Samples in Chains, Science in Context, 19(4), 591-600.
+        </span>
+        <br><br>
+        <span>
+        Russell, S. J., and P. Norvig (2016): Artificial intelligence: a modern approach. Pearson.
+        </span>
+        <br><br>
+        <span>
+        Bellman, R. (1957): Dynamic Programming. Princeton University Press.
+        </span>
         <br>
     </div>
 </div>
