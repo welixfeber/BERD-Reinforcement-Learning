@@ -26,11 +26,6 @@ Please find the information on how to join the zoom meeting in the corresponding
     <!-- Left vertical line -->
     <div style="border-left: 2.5px solid #808285; padding-left: 16px;  margin-top: 10px">
         <!-- Full report section -->
-        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
-            <a class="text font-bold" style="text-decoration: none;">
-                Slides coming soon.
-            </a>
-        </div>
          <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
             <span style="margin-right: 16px;">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
