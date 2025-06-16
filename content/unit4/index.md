@@ -200,7 +200,7 @@ Please find the information on how to join the zoom meeting in the corresponding
 <br><br>
 
 **Unit 4-4: Policy Gradient Methods**
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uj385x9VEKY&pp=0gcJCd4JAYcqIYzv" title="Unit 2-4: Value Iteration Technicalities" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uj385x9VEKY" title="Unit 2-4: Value Iteration Technicalities" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br><br>
 
 **Unit 4-5: Actor Critic Analytics**
