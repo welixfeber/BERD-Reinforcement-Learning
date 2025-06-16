@@ -132,6 +132,18 @@ Please find the information on how to join the zoom meeting in the corresponding
 {{ anchor(title="Course Videos")}}
 {% block_1c_nopad(title= "Course Videos" bg="grey" class="mt-0") %}
 
-Coming soon. 
+**Unit 3-1: Overview Reinforcement Learning**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Gky53vdiSPI" title="Unit 2-1: Markov Processes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br><br>
 
+**Unit 3-2: Monte Carlo Learning**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/58XV-S1WZwI" title="Unit 2-2: Markov Decision Processes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br><br>
+
+**Unit 3-3: Temporal Difference Learning**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JiRJmDUGCP4" title="Unit 2-3: Intro to Value Iteration with Bellman Equation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br><br>
+
+**Unit 3-4: Q-Learning**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Uh_tXNRZlZs" title="Unit 2-4: Value Iteration Technicalities" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 {% end %}
