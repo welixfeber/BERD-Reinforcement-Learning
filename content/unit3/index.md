@@ -31,6 +31,17 @@ Please find the information on how to join the zoom meeting in the corresponding
                 Slides coming soon.
             </a>
         </div>
+         <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+            <a href="https://github.com/BERD-NFDI/BERD-Reinforcement-Learning/blob/main/content/unit3/relearn3-1.pdf" download class="text-blue-500">
+                Unit 3-1: Overview Reinforcement Learning (PDF)
+            </a>
+        </div>
         <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
             <span style="margin-right: 16px;">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +49,30 @@ Please find the information on how to join the zoom meeting in the corresponding
                     <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
                 </svg>
             </span>
-            <a href="" download class="text-blue-500">
+            <a href="https://github.com/BERD-NFDI/BERD-Reinforcement-Learning/blob/main/content/unit3/relearn3-2.pdf" download class="text-blue-500">
+                Unit 3-2: Monte Carlo Learning (PDF)
+            </a>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+            <a href="https://github.com/BERD-NFDI/BERD-Reinforcement-Learning/blob/main/content/unit3/relearn3-3.pdf" download class="text-blue-500">
+                Unit 3-3: Temporal Difference Learning (PDF)
+            </a>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+            <a href="https://github.com/BERD-NFDI/BERD-Reinforcement-Learning/blob/main/content/unit3/relearn3-4.pdf" download class="text-blue-500">
+                Unit 3-4: Q-Learning (PDF)
             </a>
         </div>
         <br><br>
