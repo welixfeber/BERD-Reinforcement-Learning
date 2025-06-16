@@ -178,7 +178,8 @@ Please find the information on how to join the zoom meeting in the corresponding
         <span>
         Sigaud, O., and O. Buffet (2013): Markov decision processes in artificial intelligence. John Wiley & Sons.
         </span>
-        <br>
+        <br><br>
+        </div>
     </div>
 </div>
 {% end %}
