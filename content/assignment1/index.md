@@ -1,6 +1,6 @@
 +++
 title = "Assignment 1"
-weight=2
+weight=3
 extra.footer_nav=true
 extra.main_nav = true
 extra.sub_nav = false
