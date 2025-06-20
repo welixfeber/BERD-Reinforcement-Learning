@@ -1,6 +1,6 @@
 +++
 title="Unit 4"
-weight=2
+weight=50
 extra.footer_nav=true
 extra.main_nav = true
 extra.sub_nav =["Meeting Information", "Readings", "Course Videos"]
