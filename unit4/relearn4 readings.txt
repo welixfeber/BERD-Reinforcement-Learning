@@ -1,0 +1,18 @@
+Deep Neural Networks
+Goodfellow (2016, chapters 6, 7, 8)
+
+Deep Q-networks
+Sutton and Barto (2018, section 9.4, 9.7)
+Szepesvari (2022, section 4.3.2)
+
+Goodfellow, I. (2016): Deep learning, vol. 196. MIT press, Available at
+http://deeplearningbook.org/.
+
+Sutton, R. S., and A. G. Barto (2018): Reinforcement learning: An
+introduction, A Bradford Book, Available at
+http://incompleteideas.net/book/the-book-2nd.html.
+
+Szepesvari, C. (2022): Algorithms for reinforcement learning. Springer
+nature, Available at
+https://sites.ualberta.ca/~szepesva/RLBook.html.
+
