@@ -37,7 +37,7 @@ placeholder
         </svg>
       </span>
       <!-- Relative link to your other page -->
-      <a href="../assignment-1-copy/" class="text-blue-500">
+      <a href="https://berd-nfdi.github.io/BERD-Reinforcement-Learning/assignment1/" class="text-blue-500">
         Assignment 1
       </a>
     </div>
