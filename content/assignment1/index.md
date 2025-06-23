@@ -16,7 +16,7 @@ placeholder
 ## Introduction
 In this project, you will implement Multi-Armed Bandit algorithms. You will use first *epsilon-greedy* (from lecture) to build a portfolio of stocks adaptively at a daily frequency. Then, you will use *Thompson Sampling* (from lecture) to compare the performance and some properties of the algorithms.
 
-The code for this project contains the following files, which are available as a [zip archive](assigment%201.zip).
+The code for this project contains the following files, which are available as a [zip archive](https://github.com/BERD-NFDI/BERD-Reinforcement-Learning/blob/main/content/unit2/assignment_1/assigment%201.zip).
 
 **Files you'll edit (if you do not want to use Stata but python):**
 
