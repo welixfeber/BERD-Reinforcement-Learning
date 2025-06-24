@@ -1,0 +1,931 @@
+<!doctype html>
+<html>
+<head>
+  <title>
+    Reinforcement Learning for Business, Economics, and Social Sciences · 
+        Assignment 2
+      
+  </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;assets/fonts/assistant/assistant.css">
+<link rel="stylesheet" href="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;assets/fonts/fa/css/fontawesome.css">
+<link rel="stylesheet" href="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;assets/fonts/fa/css/solid.css">
+<link rel="stylesheet" href="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;assets/fonts/fa/css/brands.css">
+
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+<style type="text/tailwindcss">
+  html {
+  height: 100%;
+}
+
+body {
+  /* Vertical alignment of <header>, <main> and <footer> */
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.prose {
+  @apply text-base;
+}
+
+.container-width {
+  @apply w-full;
+}
+.container {
+  @apply container-width px-6 py-10 lg:px-8;
+}
+.container-mini {
+  @apply mx-auto w-full max-w-3xl;
+
+  .container-escape {
+    @apply lg:-ml-40 lg:-mr-40;
+  }
+}
+
+header {
+  font-weight: 500;
+}
+
+.prose {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+  }
+}
+h1{
+    @apply text-xl font-semibold my-6;
+}
+h2{
+    @apply text-lg font-semibold my-6;
+}
+a,button{
+    transition:color 0.5s ease;
+}
+main a{
+    position:relative;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 1px;
+}
+
+
+li{
+    position:relative;
+    margin-left:28px;
+    }
+li::before{
+    content:'\2022';
+    position:absolute;
+    left:-28px;
+    line-height:1.6;
+    
+}
+main > *{
+    @apply py-24 px-6 md:px-16 lg:px-24 xl:px-24;
+}
+/*.padding-all{
+@apply px-6 md:px-16 lg:px-24 xl:px-24;
+}*/
+::selection{
+   @apply bg-accent;
+   @apply text-primary;
+}
+
+ p{
+   @apply mb-4 py-0 !important; 
+   @apply max-w-[1024px];
+}
+/*h3:after{
+    content:"";
+    position:absolute;
+    background: white;
+    display: block;
+    top:0;
+    bottom:0;
+    width:100vw;
+    left:0;
+    
+    z-index:0;
+    
+}
+h3{
+    z-index:1;
+}*/
+[popover]:not(:popover-open):not(dialog[open]) > div{
+    transition:all 0.6s ease;
+    transform: translateY(100%);
+ 
+}
+[popover] > div{
+    transition:all 0.6s ease;
+    transform: translateY(0%);
+ 
+}
+
+.inline-arrow {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+}
+.invert-logo {
+  filter: invert(1);
+  -webkit-filter: invert(100%);
+}
+
+
+.block-1c a[href] {
+  color: #18bc9c;
+}
+.block-1c a[href]:hover {
+  color: #13967d;
+  text-decoration: underline;
+}
+
+
+</style>
+<script>
+  /** @type {import('tailwindcss').Config} */
+tailwind.config = {
+  theme: {
+    fontSize: {
+      xs:'0.75rem',
+      sm: '1rem',
+      base: '1.5rem', 
+      lg: '2rem',
+      xl: '2.5rem',
+      '2xl': '3rem',
+      '3xl': '4rem',
+      '4xl':'6rem',
+    },
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      'xxl': '1600px',
+      
+    },
+    extend: {
+      fontFamily: {
+        sans: ['"Assistant Variable"'],
+      },
+      colors: {
+        primary: '#002c16',
+        secondary:'#ffd3e9',
+        grey:'#F5F5F5',
+        accent:'#ffd3e9',
+      },
+    },
+  },
+}
+
+</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;js/lettershuffler.js"></script>
+<style>
+    .test{
+        display:inline-block;
+    }
+    .test span{
+        display:inline-block;
+        transform:rotateX(0deg);
+        transition:all 0.2s ease;
+        color:rgb(255, 211, 233)
+    }
+     .test span.active{
+        transform:rotateX(90deg);
+        
+    }
+</style>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+</head>
+<body class="!block">
+  
+  <header class="fixed w-full z-10 top-0">
+    
+    <nav class="main-nav mx-auto flex absolute container-width  justify-between  pt-8 lg:pt-10 pb-6  px-6 md:px-16 lg:px-24 xl:px-24" aria-label="Global">
+        <a href="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;" class="-m-1.5 lg:-ml-9 p-1.5">
+            <span class="sr-only">BERD Academy</span>
+            
+            <span class=" inline-block">
+                <img class="inline-block h-12 mb-3" src="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assets/BERD_academy_logo.png">
+                <img class="inline-block h-10 mb-3" src="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assets/IMG_6635.png">
+            </span>
+            
+        </a>
+        <div class="flex lg:hidden">
+            <button type="button" popovertarget="global-menu" class="-m-2.5 text-base font-bold inline-flex items-center justify-center rounded-md p-2.5 text-primary hover:text-accent">
+                <span class="sr-only">Open main menu</span>
+                MENU
+                <!--svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg-->
+            </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+            
+            
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit1/" class="text-base leading-7 font-semibold text-primary hover:text-accent">
+                Unit 1
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit2/" class="text-base leading-7 font-semibold text-primary hover:text-accent">
+                Unit 2
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assignment1/" class="text-base leading-7 font-semibold text-primary hover:text-accent">
+                Assignment 1
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit3/" class="text-base leading-7 font-semibold text-primary hover:text-accent">
+                Unit 3
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit4/" class="text-base leading-7 font-semibold text-primary hover:text-accent">
+                Unit 4
+            </a>
+            
+            
+            <a href="#" class="text-base leading-7 font-semibold text-accent hover:text-accent">
+                Assignment 2
+            </a>
+            
+            
+            
+            
+            
+            
+        </div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div popover id="global-menu" class="bg-transparent" role="dialog" aria-modal="true">
+        <div class="fixed flex flex-col items-center justify-center text-center inset-y-0 right-0 z-10 w-full overflow-y-auto bg-grey px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="absolute top-4 right-4">
+
+                <button type="button" popovertarget="global-menu" class="-m-2.5 text-base font-semibold rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Close menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y divide-gray-500/10">
+                    <div class="py-6">
+                        
+                        
+                        
+                        
+                        
+                        <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit1/" class="-mx-3 block rounded-lg  px-4 py-3 text-base leading-7 font-semibold text-gray-900 hover:text-accent">
+                            Unit 1
+                        </a>
+                        
+                        
+                        
+                        
+                        <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit2/" class="-mx-3 block rounded-lg  px-4 py-3 text-base leading-7 font-semibold text-gray-900 hover:text-accent">
+                            Unit 2
+                        </a>
+                        
+                        
+                        
+                        
+                        <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assignment1/" class="-mx-3 block rounded-lg  px-4 py-3 text-base leading-7 font-semibold text-gray-900 hover:text-accent">
+                            Assignment 1
+                        </a>
+                        
+                        
+                        
+                        
+                        <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit3/" class="-mx-3 block rounded-lg  px-4 py-3 text-base leading-7 font-semibold text-gray-900 hover:text-accent">
+                            Unit 3
+                        </a>
+                        
+                        
+                        
+                        
+                        <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit4/" class="-mx-3 block rounded-lg  px-4 py-3 text-base leading-7 font-semibold text-gray-900 hover:text-accent">
+                            Unit 4
+                        </a>
+                        
+                        
+                        
+                        
+                        <a href="#" class="-mx-3 block rounded-lg  px-4 py-3 text-base leading-7 font-semibold text-accent">
+                            Assignment 2
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="float-nav" class="over z-30 fixed w-full top-0 -translate-y-full bg-white transition-all duration-700">
+    <nav class=" mx-auto flex relative container-width items-center justify-between  pt-6 pb-6 px-6 md:px-16 lg:px-24 xl:px-24" aria-label="Global">
+        <a href="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;" class="-m-1.5 lg:-ml-9 p-1.5">
+            <span class="sr-only">BERD Academy</span>
+            
+                <img class="h-8 w-auto" src="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assets/BERD_academy_logo_green.png" alt="BERD Academy">
+            
+        </a>
+        <div class="flex lg:hidden">
+            <button type="button" popovertarget="global-menu" class="text-primary -m-2.5 text-base font-semibold inline-flex items-center justify-center rounded-md p-2.5 ">
+                <span class="sr-only">Open main menu</span>
+                <!--svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg-->
+                MENU
+            </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+            
+            
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit1/" class="text-base leading-7 font-semibold  text-primary hover:text-accent">
+                Unit 1
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit2/" class="text-base leading-7 font-semibold  text-primary hover:text-accent">
+                Unit 2
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assignment1/" class="text-base leading-7 font-semibold  text-primary hover:text-accent">
+                Assignment 1
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit3/" class="text-base leading-7 font-semibold  text-primary hover:text-accent">
+                Unit 3
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit4/" class="text-base leading-7 font-semibold  text-primary hover:text-accent">
+                Unit 4
+            </a>
+            
+            
+            <a href="#" class="text-base leading-7 font-semibold  text-accent hover:text-accent">
+                Assignment 2
+            </a>
+            
+            
+            
+            
+            
+            <a href="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;/news" class="text-base leading-7 font-semibold text-white hover:text-primary">News</a>
+        </div>
+    </nav>
+</div>
+<script>
+  
+     var lastScrollTop;
+    
+       window.onscroll = function() {dropDownMenu();};
+    function dropDownMenu(){
+        
+        if (window.scrollY > document.getElementsByClassName("hero")[0].offsetHeight - 82){
+            document.getElementById("float-nav").classList.remove("-translate-y-full");
+            //document.getElementById("float-nav").classList.add("translate-y-0");
+            console.log("remove");
+        }else{
+            document.getElementById("float-nav").classList.add("-translate-y-full");
+            //document.getElementById("float-nav").classList.remove("translate-y-0");
+        }
+        
+        
+    }
+</script>
+
+
+  <!--main class=""><!--class='container'*/-->
+</main-->
+    
+
+
+    
+        
+        
+        
+    
+    
+    
+    
+    
+    
+        
+    
+
+<div
+    class="hero text-white flex fixed w-full -z-10 top-0 h-[260px] items-end "
+    style="background: url(https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assets/greenhue_shape_zoom.png);background-size:cover;">
+    
+    <h1 class="text-xl !font-normal  pt-8 pb-8 px-6 md:px-16 lg:px-24 xl:px-24 m-0">Assignment 2</h1>
+    
+    
+    
+    
+</div>
+<main class="mt-[260px] bg-white z-20 text-base top-0 relative"> 
+    <!--div class="-mt-4"-->
+        
+        <div class="flex items-center justify-center  bg-white w-full px-4 sm:px-8 md:px-16 lg:px-32 mb-12 pb-0" style="height: 25vh;">
+    
+    <h3 class="text-xl font-bold mb-0 w-full lg:w-4/6 mx-auto text-center">Assignment 2: Value Iteration and Q-Learning</h3>
+    
+</div>
+<p><div  class="relative !p-0"> 
+    <div id="assignment-details" class="absolute -top-[80px]">
+    </div>
+</div>
+
+<div class="flex flex-wrap  bg-white w-full px-4 sm:px-8 md:px-16 lg:px-32 mt-0 mb-0">
+    
+    <h3 class="text-xl font-bold w-full lg:w-3/5 mx-auto mt-0 mb-0">Assignment Details</h3>
+    
+    
+    <div class="text-[18px] leading-tight w-full lg:w-3/5 mx-auto mt-0 mb-0"><h2 id="introduction">Introduction</h2>
+<ul>
+<li>In this project, you will implement value iteration and Q-learning. You will test your agents first on <code>GridWorld</code> (from lecture), then apply them to a simulated robot controller (Crawler) and Pacman.</li>
+<li>The code for this project contains the following files, which are available as a <a href="https://github.com/BERD-NFDI/BERD-Reinforcement-Learning/blob/main/content/unit4/assignment_2/assignment_2.zip">zip archive</a>.</li>
+</ul>
+<p><br><br></p>
+<p><strong>Files you'll edit (if you do not want to use Stata but python):</strong></p>
+<ul>
+<li><code>valueIterationAgents.py</code><br />
+A value iteration agent for solving known MDPs.</li>
+<li><code>qlearningAgents.py</code>
+Q-learning agents for GridWorld, Crawler and Pacman.</li>
+<li><code>analysis.py</code>
+A file to put your answers to questions given in the project.</li>
+</ul>
+<p><br><br>
+<strong>Files you should read but NOT edit:</strong></p>
+<ul>
+<li><code>mdp.py</code><br />
+Defines methods on general MDPs.</li>
+<li><code>learningAgents.py</code><br />
+Defines the base classes <code>ValueEstimationAgent</code> and <code>QLearningAgent</code>, which your agents will extend.</li>
+<li><code>util.py</code><br />
+Utilities, including <code>util.Counter</code>, which is particularly useful for Q-learners.</li>
+<li><code>gridworld.py</code><br />
+The GridWorld implementation.</li>
+<li><code>featureExtractors.py</code>
+Classes for extracting features on (state,action) pairs. Used for the approximate Q-learning agent (in <code>qlearningAgents.py</code>).</li>
+</ul>
+<p><br><br></p>
+<p><strong>Files you can ignore</strong></p>
+<ul>
+<li>
+<p><code>environment.py</code><br />
+Abstract class for general reinforcement learning environments. Used by <code>gridworld.py</code>.</p>
+</li>
+<li>
+<p><code>graphicsGridworldDisplay.py</code><br />
+GridWorld graphical display.</p>
+</li>
+<li>
+<p><code>graphicsUtils.py</code><br />
+Graphics utilities.</p>
+</li>
+<li>
+<p><code>textGridworldDisplay.py</code><br />
+Plug-in for the GridWorld text interface.</p>
+</li>
+<li>
+<p><code>crawler.py</code><br />
+The crawler code and test harness. You will run this but not edit it.</p>
+</li>
+<li>
+<p><code>graphicsCrawlerDisplay.py</code><br />
+GUI for the crawler robot.</p>
+</li>
+<li>
+<p><code>autograder.py</code><br />
+Project autograder.</p>
+</li>
+<li>
+<p><code>testParser.py</code><br />
+Parses autograder test and solution files.</p>
+</li>
+<li>
+<p><code>testClasses.py</code><br />
+General autograding test classes.</p>
+</li>
+<li>
+<p><code>test_cases/</code><br />
+Directory containing the test cases for each question.</p>
+</li>
+<li>
+<p><code>reinforcementTestClasses.py</code><br />
+Project 3 (this project) specific autograding test classes.</p>
+</li>
+</ul>
+<p><br><br></p>
+<p><strong>Files to Edit and Submit:</strong><br />
+You will fill in portions of <code>valueIterationAgents.py</code>, <code>qlearningAgents.py</code>, and <code>analysis.py</code> during the assignment. You should submit these files with your code and comments.<br />
+<em>Please do not change the other files in this distribution or submit any of our original files other than these files.</em>
+<br><br></p>
+<p><strong>Commenting:</strong><br />
+In this assignment we ask you to provide extensive commenting for the two files <code>valueIterationAgents.py</code> and <code>qlearningAgents.py</code>.</p>
+<p>For each function that you implement, provide:</p>
+<ul>
+<li>(a) an overall comment as part of the multiline string immediately following the function header. This comment should describe <strong>what</strong> the function computes <strong>and roughly how</strong> it computes it.</li>
+<li>(b) a per-line comment describing briefly what each line of code is doing. These can be phrases at the end of each line, preceded by <code>#</code>. If there isn’t enough space, you may also add separate comment lines.</li>
+</ul>
+<p>A portion of the project grade (3 points out of 28) will be based on an inspection of your comments in these two files.
+<br><br></p>
+<p><strong>Getting Help</strong><br />
+You are not alone! If you find yourself stuck on something, let us know. We want this project to be rewarding and instructional, not frustrating and demoralizing. But we won't know when or how to help unless you ask.</p>
+<p><br><br></p>
+<h2 id="mdps">MDPs</h2>
+<p>To get started, run <code>GridWorld</code> in manual control mode, which uses the arrow keys:</p>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python gridworld.py -m
+</code></pre>
+<p>You will see the two-exit layout from the lectures. The blue dot is the agent.<br />
+Note that when you press up, the agent only actually moves north 80% of the time.<br />
+Such is the life of a <code>GridWorld</code> agent!</p>
+<p>You can control many aspects of the simulation. A full list of options is available by running:</p>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python gridworld.py -h
+</code></pre>
+<p>The default agent moves randomly:</p>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python gridworld.py -g MazeGrid
+</code></pre>
+<p>You should see the random agent bounce around the grid until it happens upon an exit.<br />
+Not the finest hour for an AI agent.</p>
+<p><strong>Note:</strong><br />
+The <code>GridWorld</code> MDP is such that you first must enter a pre-terminal state (the double boxes shown in the GUI)<br />
+and then take the special <code>exit</code> action before the episode actually ends (in the true terminal state<br />
+called <code>TERMINAL_STATE</code>, which is not shown in the GUI).<br />
+If you run an episode manually, your total return may be less than you expected, due to the discount rate<br />
+(<code>-d</code> to change; 0.9 by default).</p>
+<p>Look at the console output that accompanies the graphical output (or use <code>-t</code> for all text).<br />
+You will be told about each transition the agent experiences (to turn this off, use <code>-q</code>).</p>
+<p>As in Pacman, positions are represented by <code>(x, y)</code> Cartesian coordinates,<br />
+and any arrays are indexed by <code>[x][y]</code>, with <code>'north'</code> being the direction of increasing <code>y</code>, etc.<br />
+By default, most transitions will receive a reward of zero,<br />
+though you can change this with the living reward option (<code>-r</code>).</p>
+</div>
+</div>
+</p>
+<p><div  class="relative !p-0"> 
+    <div id="q1" class="absolute -top-[80px]">
+    </div>
+</div>
+
+<div class="flex flex-wrap  bg-grey w-full px-4 sm:px-8 md:px-16 lg:px-32 mt-0 mb-0">
+    
+    <h3 class="text-xl font-bold w-full lg:w-3/5 mx-auto mt-0 mb-0">Question 1 (6 points): Value Iteration</h3>
+    
+    
+    <div class="text-[18px] leading-tight w-full lg:w-3/5 mx-auto mt-0 mb-0"><br>
+<p>Recall the value iteration state update equation:</p>
+<blockquote>
+<p><br />
+V_{k+1}(s) = \max_a \sum_{s'} T(s,a,s')[R(s,a,s') + γ V_k(s')]</p>
+</blockquote>
+<p>Write a value iteration agent in <code>ValueIterationAgent</code>, partially specified in <code>valueIterationAgents.py</code>. This agent is an offline planner. The relevant training option is the number of iterations (<code>-i</code>) in its initial planning phase. The constructor runs value iteration for that many iterations before returning.</p>
+<p>Implement these methods using V_k:</p>
+<ul>
+<li><code>computeActionFromValues(state)</code>: best action according to <code>self.values</code>.</li>
+<li><code>computeQValueFromValues(state, action)</code>: Q-value of <code>(state, action)</code> pair from <code>self.values</code>.</li>
+</ul>
+<br>
+<p>These appear in the GUI: values in squares, Q-values in quarters, policies as arrows.</p>
+<br>
+<p><strong>Important:</strong> Use batch value iteration—each V_k from fixed V_{k-1}, not in-place updates. Successor values must come from iteration k-1 even if some have updated in k. See Sutton &amp; Barto, Ch.4.1, 6th paragraph.</p>
+<blockquote>
+<p><strong>Note:</strong> A policy from depth k values reflects k+1 rewards (π_{k+1}). Q-values reflect one more reward too (Q_{k+1}).</p>
+</blockquote>
+<br>
+<p><strong>Return the synthesized policy π_{k+1}.</strong></p>
+<p><strong>Hint:</strong> Use <code>util.Counter</code> (a dict with default 0). Methods like <code>totalCount</code> help. Watch out: <code>argMax</code> may not include the actual max key.</p>
+<p><strong>Note:</strong> Handle states with no available actions (terminal states).</p>
+<br>
+<p><strong>Run your agent and simulate 10 episodes:</strong></p>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python gridworld.py -a value -i 100 -k 10
+</code></pre>
+<br>
+<p><strong>Hint:</strong> On BookGrid, 5 iterations yields:</p>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python gridworld.py -a value -i 5
+</code></pre>
+<br>
+<p style="text-align: center;"><img decoding="async" src="value.jpg" alt="value-iteration-values"></p>
+<p><strong>Grading:</strong>
+Your agent will be graded on a new grid. We will check values, Q-values, and policies after fixed iterations and at convergence (e.g., after 100 iterations).</p>
+</div>
+</div>
+</p>
+<p><div  class="relative !p-0"> 
+    <div id="q2" class="absolute -top-[80px]">
+    </div>
+</div>
+
+<div class="flex flex-wrap  bg-white w-full px-4 sm:px-8 md:px-16 lg:px-32 mt-0 mb-0">
+    
+    <h3 class="text-xl font-bold w-full lg:w-3/5 mx-auto mt-0 mb-0">Question 2 (1 point): Bridge Crossing Analysis</h3>
+    
+    
+    <div class="text-[18px] leading-tight w-full lg:w-3/5 mx-auto mt-0 mb-0"><br>
+<p><code>BridgeGrid</code> is a grid world map with a low-reward terminal state and a high-reward terminal state separated by a narrow “bridge,” on either side of which is a chasm of high negative reward. The agent starts near the low-reward state. With the default discount of 0.9 and the default noise of 0.2, the optimal policy does not cross the bridge. Change only <strong>one</strong> of the discount and noise parameters so that the optimal policy causes the agent to attempt to cross the bridge. Put your answer in <code>question2()</code> of <code>analysis.py</code>. (Noise refers to how often an agent ends up in an unintended successor state when they perform an action.) The default corresponds to:</p>
+<br>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python gridworld.py -a value -i 100 -g BridgeGrid --discount 0.9 --noise 0.2
+</code></pre>
+<p style="text-align: center;"><img decoding="async" src="value-q2.jpg" alt="value-iteration-values"></p>
+<br>
+<p><strong>Grading:</strong> We will check that you only changed one of the given parameters, and that with this change, a correct value iteration agent should cross the bridge.</p>
+</div>
+</div>
+</p>
+<p><div  class="relative !p-0"> 
+    <div id="q3" class="absolute -top-[80px]">
+    </div>
+</div>
+
+<div class="flex flex-wrap  bg-grey w-full px-4 sm:px-8 md:px-16 lg:px-32 mt-0 mb-0">
+    
+    <h3 class="text-xl font-bold w-full lg:w-3/5 mx-auto mt-0 mb-0">Question 3 (5 points): Policies</h3>
+    
+    
+    <div class="text-[18px] leading-tight w-full lg:w-3/5 mx-auto mt-0 mb-0"><br>
+<p>Consider the <code>DiscountGrid</code> layout, shown below. This grid has two terminal states with positive payoff (in the middle row), a close exit with payoff +1 and a distant exit with payoff +10. The bottom row of the grid consists of terminal states with negative payoff (shown in red); each state in this “cliff” region has payoff −10. The starting state is the yellow square. We distinguish between two types of paths:</p>
+<ol>
+<li>Paths that <strong>“risk the cliff”</strong> and travel near the bottom row of the grid; these paths are shorter but risk earning a large negative payoff, and are represented by the red arrow in the figure below.</li>
+<li>Paths that <strong>“avoid the cliff”</strong> and travel along the top edge of the grid. These paths are longer but are less likely to incur huge negative payoffs. These paths are represented by the green arrow in the figure below.</li>
+</ol>
+<br>
+<p align="center"><img src="discountgrid.jpg" alt="value-iteration-values" decoding="async" /></p>
+<br>
+<p>In this question, you will choose settings of the discount, noise, and living reward parameters for this MDP to produce optimal policies of several different types. Your setting of the parameter values for each part should have the property that, if your agent followed its optimal policy without being subject to any noise, it would exhibit the given behavior. If a particular behavior is not achieved for any setting of the parameters, assert that the policy is impossible by returning the string <code>NOT POSSIBLE</code>.</p>
+<br>
+<p><strong>Here are the optimal policy types you should attempt to produce:</strong></p>
+<p>a. Prefer the close exit (+1), risking the cliff (−10)</p>
+<p>b. Prefer the close exit (+1), but avoiding the cliff (−10)</p>
+<p>c. Prefer the distant exit (+10), risking the cliff (−10)</p>
+<p>d. Prefer the distant exit (+10), avoiding the cliff (−10)</p>
+<p>e. Avoid both exits and the cliff (so an episode should never terminate)</p>
+<br>
+<p><code>question3a()</code> through <code>question3e()</code> should each return a 3-item tuple of <code>(discount, noise, livingReward)</code> in <code>analysis.py</code>.</p>
+<br>
+<p><strong>Note:</strong> You can check your policies in the GUI. For example, using a correct answer to 3(a), the arrow in (0, 1) should point east, the arrow in (1, 1) should also point east, and the arrow in (2, 1) should point north.</p>
+<br>
+<p><strong>Note:</strong> On some machines you may not see an arrow. In this case, press a button on the keyboard to switch to Q-value display, and mentally calculate the policy by taking the <code>argmax</code> of the available Q-values for each state.</p>
+<br>
+<p><strong>Grading:</strong> We will check that the desired policy is returned in each case.</p>
+</div>
+</div>
+</p>
+<p><div  class="relative !p-0"> 
+    <div id="q4" class="absolute -top-[80px]">
+    </div>
+</div>
+
+<div class="flex flex-wrap  bg-white w-full px-4 sm:px-8 md:px-16 lg:px-32 mt-0 mb-0">
+    
+    <h3 class="text-xl font-bold w-full lg:w-3/5 mx-auto mt-0 mb-0">Question 4 (5 points): Q-Learning</h3>
+    
+    
+    <div class="text-[18px] leading-tight w-full lg:w-3/5 mx-auto mt-0 mb-0"><br>
+<p>Note that your value iteration agent does not actually learn from experience. Rather, it ponders its MDP model to arrive at a complete policy before ever interacting with a real environment. When it does interact with the environment, it simply follows the precomputed policy (e.g., it becomes a reflex agent). This distinction may be subtle in a simulated environment like Gridworld, but it's very important in the real world, where the real MDP is not available.</p>
+<br>
+<p>You will now write a Q-learning agent, which does very little on construction, but instead learns by trial and error from interactions with the environment through its <code>update(state, action, nextState, reward)</code> method. A stub of a Q-learner is specified in <code>QLearningAgent</code> in <code>qlearningAgents.py</code>, and you can select it with the option <code>-a q</code>. For this question, you must implement the following methods in <code>QLearningAgent</code>:</p>
+<ul>
+<li><code>update(state, action, nextState, reward)</code></li>
+<li><code>computeValueFromQValues(state)</code></li>
+<li><code>getQValue(state, action)</code></li>
+<li><code>computeActionFromQValues(state)</code></li>
+</ul>
+<br>
+<p><strong>Note:</strong> For <code>computeActionFromQValues</code>, you should break ties randomly for better behavior. The <code>random.choice()</code> function will help. In a particular state, actions that your agent hasn't seen before still have a Q-value of zero, and if all of the actions that your agent has seen before have a negative Q-value, an unseen action may be optimal.</p>
+<br>
+<p><strong>Important:</strong> Make sure that in your <code>computeValueFromQValues</code> and <code>computeActionFromQValues</code> functions, you only access Q-values by calling <code>getQValue</code>. This abstraction will be useful for Question 8 when you override <code>getQValue</code> to use features of state-action pairs rather than state-action pairs directly.</p>
+<p>With the Q-learning update in place, you can watch your Q-learner learn under manual control, using the keyboard:</p>
+<br>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python gridworld.py -a q -k 5 -m
+</code></pre>
+<br>
+<p>Recall that -k will control the number of episodes your agent gets to learn. Watch how the agent learns about the state it was just in, not the one it moves to, and “leaves learning in its wake.”</p>
+<br>
+<p><strong>Hint:</strong> To help with debugging, you can turn off noise by using the --noise 0.0 parameter (though this obviously makes Q-learning less interesting). If you manually steer Pacman north and then east along the optimal path for four episodes, you should see the following Q-values:</p>
+<p align="center"><img src="qlearning.jpg" alt="Q-learning Values" decoding="async" /></p>
+<br>
+<p><strong>Grading:</strong> We will run your Q-learning agent and check that it learns the same Q-values and policy as our reference implementation when each is presented with the same set of examples.</p>
+</div>
+</div>
+</p>
+<p><div  class="relative !p-0"> 
+    <div id="q5" class="absolute -top-[80px]">
+    </div>
+</div>
+
+<div class="flex flex-wrap  bg-grey w-full px-4 sm:px-8 md:px-16 lg:px-32 mt-0 mb-0">
+    
+    <h3 class="text-xl font-bold w-full lg:w-3/5 mx-auto mt-0 mb-0">Question 5 (3 points): Epsilon Greedy</h3>
+    
+    
+    <div class="text-[18px] leading-tight w-full lg:w-3/5 mx-auto mt-0 mb-0"><br>
+<p>Complete your Q-learning agent by implementing epsilon-greedy action selection in <code>getAction</code>, meaning it chooses random actions an epsilon fraction of the time, and follows its current best Q-values otherwise. Note that choosing a random action may result in choosing the best action—that is, you should not choose a random sub-optimal action, but rather <em>any</em> random legal action.</p>
+<br>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python gridworld.py -a q -k 100
+</code></pre>
+<br>
+<p>Your final Q-values should resemble those of your value iteration agent, especially along well-traveled paths. However, your average returns will be lower than the Q-values predict because of the random actions and the initial learning phase.</p>
+<br>
+<p>You can choose an element from a list uniformly at random by calling <code>random.choice()</code>. You can simulate a binary variable with probability  of success by <code>using util.flipCoin(p)</code>, which returns <code>True</code> with probability and <code>False</code> with probability.</p>
+<br>
+<p>With no additional code, you should now be able to run a Q-learning crawler robot:</p>
+<p><code>python crawler.py</code></p>
+<br>
+<p>This will invoke the crawling robot from class using your Q-learner. Play around with the various learning parameters to see how they affect the agent's policies and actions. Note that the step delay is a parameter of the simulation, whereas the learning rate and epsilon are parameters of your learning algorithm, and the discount factor is a property of the environment.</p>
+<br>
+<p>If this doesn't work, you've probably written some code too specific to the GridWorld problem and you should make it more general to all MDPs.</p>
+</div>
+</div>
+</p>
+<p><div  class="relative !p-0"> 
+    <div id="q6" class="absolute -top-[80px]">
+    </div>
+</div>
+
+<div class="flex flex-wrap  bg-white w-full px-4 sm:px-8 md:px-16 lg:px-32 mt-0 mb-0">
+    
+    <h3 class="text-xl font-bold w-full lg:w-3/5 mx-auto mt-0 mb-0">Question 6 (1 points): Bridge Crossing Revisited</h3>
+    
+    
+    <div class="text-[18px] leading-tight w-full lg:w-3/5 mx-auto mt-0 mb-0"><br>
+<p>First, train a completely random Q-learner with the default learning rate on the noiseless <code>BridgeGrid</code> for 50 episodes and observe whether it finds the optimal policy:</p>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python gridworld.py -a q -k 50 -n 0 -g BridgeGrid -e 1
+</code></pre>
+<p><br><br></p>
+<p>Now try the same experiment with an epsilon of 0. Is there an epsilon and a learning rate for which it is highly likely (greater than 99%) that the optimal policy will be learned after 50 iterations? <code>question6()</code> in <code>analysis.py</code> should return either a 2-item tuple (<code>epsilon</code>, <code>learningRate</code>) or the string <code>NOT POSSIBLE</code> if there is none. <code>Epsilon</code> is controlled by <code>-e</code>, learning rate by <code>-l</code>.</p>
+<br>
+<p><strong>Note:</strong> Your response should not depend on the exact tie-breaking mechanism used to choose actions. This means your answer should be correct even if, for instance, we rotated the entire <code>BridgeGrid</code> world 90°.</p>
+</div>
+</div>
+</p>
+<p><div  class="relative !p-0"> 
+    <div id="q7" class="absolute -top-[80px]">
+    </div>
+</div>
+
+<div class="flex flex-wrap  bg-grey w-full px-4 sm:px-8 md:px-16 lg:px-32 mt-0 mb-0">
+    
+    <h3 class="text-xl font-bold w-full lg:w-3/5 mx-auto mt-0 mb-0">Question 7 (1 points): Q-Learning and Pacman</h3>
+    
+    
+    <div class="text-[18px] leading-tight w-full lg:w-3/5 mx-auto mt-0 mb-0"><br>
+<p>Time to play some Pacman! Pacman will play games in two phases. In the first phase, <em>training</em>, Pacman learns about position-action values. Training games run in quiet mode by default, with no display. Once training is complete, testing mode begins: <code>self.epsilon</code> and <code>self.alpha</code> are set to 0.0, stopping learning and disabling exploration so Pacman exploits learned policy. Test games display in the GUI.</p>
+<br>
+<p>Without code changes, run Q-learning Pacman on a tiny grid:
+<br></p>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python pacman.py -p PacmanQAgent -x 2000 -n 2010 -l smallGrid
+</code></pre>
+<br>
+<p><code>PacmanQAgent</code> (inherited from <code>QLearningAgent</code>) has default parameters effective for Pacman (<code>epsilon=0.05</code>, <code>alpha=0.2</code>, <code>gamma=0.8</code>). You get full credit if this command runs without exceptions and your agent wins ≥ 80% of test games. The grader runs 100 test games after 2000 training games.</p>
+<p><strong>Hint:</strong> If your agent works for <code>gridworld.py</code> and <code>crawler.py</code> but not for Pacman on <code>smallGrid</code>, check <code>getAction</code> and <code>computeActionFromQValues</code> for unseen actions: unseen actions have Q-value zero, so after all seen actions have negative Q-values, an unseen action may be optimal. Beware <code>argmax</code> from <code>util.Counter</code>!</p>
+<br>
+<p><strong>Note:</strong> To experiment with learning parameters, use <code>-a</code>, e.g.:</p>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python pacman.py -p PacmanQAgent -a epsilon=0.1,alpha=0.3,gamma=0.7
+</code></pre>
+<br>
+<p>These values are accessible as <code>self.epsilon</code>, <code>self.alpha</code>, and <code>self.gamma</code> inside the agent.</p>
+<p>Note: Although 2010 games play, the first 2000 are training (hidden by <code>-x 2000</code>), so you see only the final 10 games. The training count is passed to your agent as <code>numTraining</code>.</p>
+<br>
+<p><strong>Note:</strong> To watch 10 training games:</p>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python pacman.py -p PacmanQAgent -n 10 -l smallGrid -a numTraining=10
+</code></pre>
+<br>
+<p>During training, output appears every 100 games with statistics. Epsilon is positive during training, so rewards remain low initially due to exploratory moves into ghosts. As a benchmark, after 1000–1400 games, the average reward per 100-game segment should become positive (winning more than losing), and by end of training, stay positive and fairly high (100–350).</p>
+<br>
+<p>Understand that the MDP state is the full board configuration. Intermediate frames where Pacman has moved but ghosts haven't are not MDP states; they’re bundled into the transition.</p>
+<br>
+<p>After training, Pacman should win reliably (≥ 90% of test games).
+<br>
+However, on larger layouts (e.g. <code>mediumGrid</code>), training fails: average training rewards stay negative, test games are lost, and training is slow. This is because each board configuration is a separate state with separate Q-values, so the agent can't generalize.</p>
+</div>
+</div>
+</p>
+<p><div  class="relative !p-0"> 
+    <div id="q8" class="absolute -top-[80px]">
+    </div>
+</div>
+
+<div class="flex flex-wrap  bg-white w-full px-4 sm:px-8 md:px-16 lg:px-32 mt-0 mb-0">
+    
+    <h3 class="text-xl font-bold w-full lg:w-3/5 mx-auto mt-0 mb-0">Question 8 (3 points): Approximate Q-Learning</h3>
+    
+    
+    <div class="text-[18px] leading-tight w-full lg:w-3/5 mx-auto mt-0 mb-0"><br>
+<p>Implement an approximate Q-learning agent that learns weights for features of states, where many states might share the same features. Write your implementation in the <code>ApproximateQAgent</code> class in <code>qlearningAgents.py</code>, which is a subclass of <code>PacmanQAgent</code>.</p>
+<p><strong>Note:</strong> Approximate Q-learning assumes a feature function <code>f(s,a)</code> over state-action pairs, yielding a vector of feature values <code>f_1(s,a), ..., f_n(s,a)</code>. Feature functions are provided in <code>featureExtractors.py</code>. Feature vectors are <code>util.Counter</code> objects containing non-zero feature-value pairs; omitted features are zero.</p>
+<br>
+<p>The approximate Q-function is:</p>
+<blockquote>
+<p>[ Q(s,a) = \sum_{i=1}^n f_i(s,a) ; w_i ]</p>
+</blockquote>
+<p>where each weight <code>w_i</code> corresponds to feature <code>f_i</code>. Implement the weight vector as a dictionary mapping features to weight values. Update weights as in Q-learning:</p>
+<blockquote>
+<p>[ w_i \leftarrow w_i + \alpha \cdot \text{difference} \cdot f_i(s,a) ]</p>
+<p>where</p>
+<p>[ \text{difference} = \bigl(r + \gamma \max_{a'} Q(s',a')\bigr) - Q(s,a). ]</p>
+</blockquote>
+<br>
+<p>By default, <code>ApproximateQAgent</code> uses <code>IdentityExtractor</code>, assigning a single feature to every <code>(state,action)</code>. With this extractor, your agent should behave identically to <code>PacmanQAgent</code>. Test via:</p>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python pacman.py -p ApproximateQAgent -x 2000 -n 2010 -l smallGrid
+</code></pre>
+<br>
+<p><strong>Important:</strong> <code>ApproximateQAgent</code> subclasses <code>QLearningAgent</code> and shares methods like <code>getAction</code>. Ensure methods in <code>QLearningAgent</code> call <code>getQValue</code> (not accessing Q-values directly), so overriding <code>getQValue</code> in your approximate agent computes actions using approximate Q-values.</p>
+<p>Once identity features work, run with a custom extractor:</p>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python pacman.py -p ApproximateQAgent -a extractor=SimpleExtractor -x 50 -n 60 -l mediumGrid
+</code></pre>
+<br>
+<p>Even larger layouts should work (warning: may take minutes):</p>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">python pacman.py -p ApproximateQAgent -a extractor=SimpleExtractor -x 50 -n 60 -l mediumClassic
+</code></pre>
+<br>
+<p>With no errors, your approximate Q-learning agent should win almost every time with simple features and only 50 training games.</p>
+<p><br><br></p>
+<p><strong>Grading:</strong> We will run your approximate Q-learning agent and verify it learns the same Q-values and feature weights as our reference when presented with identical examples.</p>
+<p><em>Congratulations! You have a learning Pacman agent!</em></p>
+<br>
+<p><strong>Submit:</strong> <code>valueIterationAgents.py</code>, <code>qlearningAgents.py</code>, and <code>analysis.py</code> (do not zip).</p>
+</div>
+</div>
+</p>
+
+        
+        
+    <!--/div -->
+</main>
+<script>
+    //remove empty <p></p> generated by Zola
+     var paragraphs = document.querySelectorAll("main > p");
+       for (var i = 0; i < paragraphs.length; i++) {
+        if (paragraphs[i].innerHTML==""){
+            paragraphs[i].remove();
+        }
+        
+    }
+</script>
+
+  
+  <footer class="bg-white text-primary py-6 px-6 md:px-16 lg:px-24 xl:px-24 z-40" aria-labelledby="footer-heading">
+    <h2 id="footer-heading" class="sr-only">Footer</h2>
+
+    <div class="flex flex-wrap justify-between items-start space-y-4 md:space-y-0"> <!-- flex-wrap added for wrapping -->
+        <!-- Contact Information -->
+        <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-8"> <!-- Column on small screens, row on larger screens -->
+            <!-- Email Section -->
+            <a href="mailto:berd-academy@stat.uni-muenchen.de" class="flex items-center text-base font-semibold leading-tight hover:text-accent">
+                <i class="fas fa-envelope mr-2"></i> <!-- Email icon -->
+                berd-academy@stat.uni-muenchen.de
+            </a>
+
+            <!-- LinkedIn Section -->
+            <a href="https://www.linkedin.com/school/berd-nfdi/" target="_blank" class="flex items-center text-base font-semibold leading-tight hover:text-accent">
+                <i class="fab fa-linkedin mr-2"></i> <!-- LinkedIn icon -->
+                @berd-nfdi
+            </a>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6"> <!-- Make links wrap and align properly -->
+            <a href="/impressum" class="text-base font-semibold leading-tight hover:text-accent">Impressum</a>
+        </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-gray-300 mt-6"></div>
+
+    <!-- Footer bottom -->
+    <div class="flex justify-between items-center pt-4">
+        <p class="text-sm leading-5">&copy; 2025 – BERD Academy. All rights reserved.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

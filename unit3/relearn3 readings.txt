@@ -1,0 +1,29 @@
+Intro to Reinforcement Learning
+Sutton and Barto (2018, section 5.1-5.3, 6.1-6.3, 6.5)
+Szepesvari (2022, section 3.1, 4.3)
+Sigaud and Buffet (2013, section 2.1-2.5)
+Russell and Norvig (2016, section 21.1-21.3)
+
+Policy Gradient Methods
+Sutton and Barto (2018, section 13.1-13.3, 13.7)
+Sigaud and Buffet (2013, section 5.1-5.2)
+Russell and Norvig (2016, section 21.5)
+
+Actor Critic Algorithms
+Sutton and Barto (2018, section 13.4-13.5)
+Szepesvari (2022, section 4.4)
+Sigaud and Buffet (2013, section 5.3)
+
+Sutton, R. S., and A. G. Barto (2018): Reinforcement learning: An
+introduction, A Bradford Book, Available at
+http://incompleteideas.net/book/the-book-2nd.html.
+
+Szepesvari, C. (2022): Algorithms for reinforcement learning. Springer
+nature, Available at
+https://sites.ualberta.ca/~szepesva/RLBook.html.
+
+Sigaud, O., and O. Buffet (2013): Markov decision processes in artificial
+intelligence. John Wiley & Sons.
+
+Russell, S. J., and P. Norvig (2016): Artificial intelligence: a modern approach. Pearson.
+

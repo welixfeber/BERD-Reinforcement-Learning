@@ -1,0 +1,719 @@
+<!doctype html>
+<html>
+<head>
+  <title>
+    Reinforcement Learning for Business, Economics, and Social Sciences · 
+        Unit 4
+      
+  </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;assets/fonts/assistant/assistant.css">
+<link rel="stylesheet" href="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;assets/fonts/fa/css/fontawesome.css">
+<link rel="stylesheet" href="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;assets/fonts/fa/css/solid.css">
+<link rel="stylesheet" href="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;assets/fonts/fa/css/brands.css">
+
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+<style type="text/tailwindcss">
+  html {
+  height: 100%;
+}
+
+body {
+  /* Vertical alignment of <header>, <main> and <footer> */
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.prose {
+  @apply text-base;
+}
+
+.container-width {
+  @apply w-full;
+}
+.container {
+  @apply container-width px-6 py-10 lg:px-8;
+}
+.container-mini {
+  @apply mx-auto w-full max-w-3xl;
+
+  .container-escape {
+    @apply lg:-ml-40 lg:-mr-40;
+  }
+}
+
+header {
+  font-weight: 500;
+}
+
+.prose {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+  }
+}
+h1{
+    @apply text-xl font-semibold my-6;
+}
+h2{
+    @apply text-lg font-semibold my-6;
+}
+a,button{
+    transition:color 0.5s ease;
+}
+main a{
+    position:relative;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 1px;
+}
+
+
+li{
+    position:relative;
+    margin-left:28px;
+    }
+li::before{
+    content:'\2022';
+    position:absolute;
+    left:-28px;
+    line-height:1.6;
+    
+}
+main > *{
+    @apply py-24 px-6 md:px-16 lg:px-24 xl:px-24;
+}
+/*.padding-all{
+@apply px-6 md:px-16 lg:px-24 xl:px-24;
+}*/
+::selection{
+   @apply bg-accent;
+   @apply text-primary;
+}
+
+ p{
+   @apply mb-4 py-0 !important; 
+   @apply max-w-[1024px];
+}
+/*h3:after{
+    content:"";
+    position:absolute;
+    background: white;
+    display: block;
+    top:0;
+    bottom:0;
+    width:100vw;
+    left:0;
+    
+    z-index:0;
+    
+}
+h3{
+    z-index:1;
+}*/
+[popover]:not(:popover-open):not(dialog[open]) > div{
+    transition:all 0.6s ease;
+    transform: translateY(100%);
+ 
+}
+[popover] > div{
+    transition:all 0.6s ease;
+    transform: translateY(0%);
+ 
+}
+
+.inline-arrow {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+}
+.invert-logo {
+  filter: invert(1);
+  -webkit-filter: invert(100%);
+}
+
+
+.block-1c a[href] {
+  color: #18bc9c;
+}
+.block-1c a[href]:hover {
+  color: #13967d;
+  text-decoration: underline;
+}
+
+
+</style>
+<script>
+  /** @type {import('tailwindcss').Config} */
+tailwind.config = {
+  theme: {
+    fontSize: {
+      xs:'0.75rem',
+      sm: '1rem',
+      base: '1.5rem', 
+      lg: '2rem',
+      xl: '2.5rem',
+      '2xl': '3rem',
+      '3xl': '4rem',
+      '4xl':'6rem',
+    },
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      'xxl': '1600px',
+      
+    },
+    extend: {
+      fontFamily: {
+        sans: ['"Assistant Variable"'],
+      },
+      colors: {
+        primary: '#002c16',
+        secondary:'#ffd3e9',
+        grey:'#F5F5F5',
+        accent:'#ffd3e9',
+      },
+    },
+  },
+}
+
+</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;js/lettershuffler.js"></script>
+<style>
+    .test{
+        display:inline-block;
+    }
+    .test span{
+        display:inline-block;
+        transform:rotateX(0deg);
+        transition:all 0.2s ease;
+        color:rgb(255, 211, 233)
+    }
+     .test span.active{
+        transform:rotateX(90deg);
+        
+    }
+</style>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+</head>
+<body class="!block">
+  
+  <header class="fixed w-full z-10 top-0">
+    
+    <nav class="main-nav mx-auto flex absolute container-width  justify-between  pt-8 lg:pt-10 pb-6  px-6 md:px-16 lg:px-24 xl:px-24" aria-label="Global">
+        <a href="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;" class="-m-1.5 lg:-ml-9 p-1.5">
+            <span class="sr-only">BERD Academy</span>
+            
+            <span class=" inline-block">
+                <img class="inline-block h-12 mb-3" src="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assets/BERD_academy_logo.png">
+                <img class="inline-block h-10 mb-3" src="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assets/IMG_6635.png">
+            </span>
+            
+        </a>
+        <div class="flex lg:hidden">
+            <button type="button" popovertarget="global-menu" class="-m-2.5 text-base font-bold inline-flex items-center justify-center rounded-md p-2.5 text-primary hover:text-accent">
+                <span class="sr-only">Open main menu</span>
+                MENU
+                <!--svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg-->
+            </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+            
+            
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit1/" class="text-base leading-7 font-semibold text-primary hover:text-accent">
+                Unit 1
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit2/" class="text-base leading-7 font-semibold text-primary hover:text-accent">
+                Unit 2
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assignment1/" class="text-base leading-7 font-semibold text-primary hover:text-accent">
+                Assignment 1
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit3/" class="text-base leading-7 font-semibold text-primary hover:text-accent">
+                Unit 3
+            </a>
+            
+            
+            <a href="#" class="text-base leading-7 font-semibold text-accent hover:text-accent">
+                Unit 4
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assignment2/" class="text-base leading-7 font-semibold text-primary hover:text-accent">
+                Assignment 2
+            </a>
+            
+            
+            
+            
+            
+            
+        </div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div popover id="global-menu" class="bg-transparent" role="dialog" aria-modal="true">
+        <div class="fixed flex flex-col items-center justify-center text-center inset-y-0 right-0 z-10 w-full overflow-y-auto bg-grey px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="absolute top-4 right-4">
+
+                <button type="button" popovertarget="global-menu" class="-m-2.5 text-base font-semibold rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Close menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y divide-gray-500/10">
+                    <div class="py-6">
+                        
+                        
+                        
+                        
+                        
+                        <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit1/" class="-mx-3 block rounded-lg  px-4 py-3 text-base leading-7 font-semibold text-gray-900 hover:text-accent">
+                            Unit 1
+                        </a>
+                        
+                        
+                        
+                        
+                        <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit2/" class="-mx-3 block rounded-lg  px-4 py-3 text-base leading-7 font-semibold text-gray-900 hover:text-accent">
+                            Unit 2
+                        </a>
+                        
+                        
+                        
+                        
+                        <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assignment1/" class="-mx-3 block rounded-lg  px-4 py-3 text-base leading-7 font-semibold text-gray-900 hover:text-accent">
+                            Assignment 1
+                        </a>
+                        
+                        
+                        
+                        
+                        <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit3/" class="-mx-3 block rounded-lg  px-4 py-3 text-base leading-7 font-semibold text-gray-900 hover:text-accent">
+                            Unit 3
+                        </a>
+                        
+                        
+                        
+                        
+                        <a href="#" class="-mx-3 block rounded-lg  px-4 py-3 text-base leading-7 font-semibold text-accent">
+                            Unit 4
+                        </a>
+                        
+                        
+                        
+                        
+                        <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assignment2/" class="-mx-3 block rounded-lg  px-4 py-3 text-base leading-7 font-semibold text-gray-900 hover:text-accent">
+                            Assignment 2
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="float-nav" class="over z-30 fixed w-full top-0 -translate-y-full bg-white transition-all duration-700">
+    <nav class=" mx-auto flex relative container-width items-center justify-between  pt-6 pb-6 px-6 md:px-16 lg:px-24 xl:px-24" aria-label="Global">
+        <a href="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;" class="-m-1.5 lg:-ml-9 p-1.5">
+            <span class="sr-only">BERD Academy</span>
+            
+                <img class="h-8 w-auto" src="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assets/BERD_academy_logo_green.png" alt="BERD Academy">
+            
+        </a>
+        <div class="flex lg:hidden">
+            <button type="button" popovertarget="global-menu" class="text-primary -m-2.5 text-base font-semibold inline-flex items-center justify-center rounded-md p-2.5 ">
+                <span class="sr-only">Open main menu</span>
+                <!--svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg-->
+                MENU
+            </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+            
+            
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit1/" class="text-base leading-7 font-semibold  text-primary hover:text-accent">
+                Unit 1
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit2/" class="text-base leading-7 font-semibold  text-primary hover:text-accent">
+                Unit 2
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assignment1/" class="text-base leading-7 font-semibold  text-primary hover:text-accent">
+                Assignment 1
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/unit3/" class="text-base leading-7 font-semibold  text-primary hover:text-accent">
+                Unit 3
+            </a>
+            
+            
+            <a href="#" class="text-base leading-7 font-semibold  text-accent hover:text-accent">
+                Unit 4
+            </a>
+            
+            
+            <a href="https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assignment2/" class="text-base leading-7 font-semibold  text-primary hover:text-accent">
+                Assignment 2
+            </a>
+            
+            
+            
+            
+            
+            <a href="https:&#x2F;&#x2F;BERD-NFDI.github.io&#x2F;BERD-Reinforcement-Learning&#x2F;/news" class="text-base leading-7 font-semibold text-white hover:text-primary">News</a>
+        </div>
+    </nav>
+</div>
+<script>
+  
+     var lastScrollTop;
+    
+       window.onscroll = function() {dropDownMenu();};
+    function dropDownMenu(){
+        
+        if (window.scrollY > document.getElementsByClassName("hero")[0].offsetHeight - 82){
+            document.getElementById("float-nav").classList.remove("-translate-y-full");
+            //document.getElementById("float-nav").classList.add("translate-y-0");
+            console.log("remove");
+        }else{
+            document.getElementById("float-nav").classList.add("-translate-y-full");
+            //document.getElementById("float-nav").classList.remove("translate-y-0");
+        }
+        
+        
+    }
+</script>
+
+
+  <!--main class=""><!--class='container'*/-->
+</main-->
+    
+
+
+    
+        
+        
+        
+    
+    
+    
+        
+    
+    
+    
+    
+        
+    
+
+<div
+    class="hero text-white flex fixed w-full -z-10 top-0 h-[260px] items-end "
+    style="background: url(https://BERD-NFDI.github.io/BERD-Reinforcement-Learning/assets/greenhue_shape_zoom.png);background-size:cover;">
+    
+    <h1 class="text-xl !font-normal  pt-8 pb-8 px-6 md:px-16 lg:px-24 xl:px-24 m-0">Unit 4</h1>
+    
+    
+        <div class="ml-auto pt-8 pb-8 px-6 md:px-16 lg:px-24 xl:px-24 flex gap-x-12 flex-wrap justify-end">
+        
+       <a  class="text-base whitespace-nowrap font-semibold " href="#meeting-information">Meeting Information</a>
+        
+       <a  class="text-base whitespace-nowrap font-semibold " href="#readings">Readings</a>
+        
+       <a  class="text-base whitespace-nowrap font-semibold " href="#course-videos">Course Videos</a>
+        
+        </div>
+    
+    
+    
+</div>
+<main class="mt-[260px] bg-white z-20 text-base top-0 relative"> 
+    <!--div class="-mt-4"-->
+        
+        <div class="flex items-center justify-center  bg-white w-full px-4 sm:px-8 md:px-16 lg:px-32 mb-12 pb-0" style="height: 25vh;">
+    
+    <h3 class="text-xl font-bold mb-0 w-full lg:w-4/6 mx-auto text-center">Deep Learning (Unit 4)</h3>
+    
+</div>
+<p><div  class="relative !p-0"> 
+    <div id="assignment" class="absolute -top-[80px]">
+    </div>
+</div>
+
+<div class="flex flex-wrap  bg-grey w-full px-4 sm:px-8 md:px-16 lg:px-32 mt-0 mb-0">
+    
+    <h3 class="text-xl font-bold w-full lg:w-3/5 mx-auto mt-0 mb-0">Assignment 2</h3>
+    
+    
+    <div class="text-[18px] leading-tight w-full lg:w-3/5 mx-auto mt-0 mb-0"><div class="w-full text-left" style="display: flex;">
+    <!-- Left vertical line -->
+    <div style="border-left: 2.5px solid #808285; padding-left: 16px;  margin-top: 10px">
+        <!-- Full report section -->
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <a class="text font-bold" style="text-decoration: none;">
+            <strong>Deadline:</strong> July 22, 2025<br><br>
+                Please find the assignment for Unit 4 here:
+            </a>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+            <a href="https://berd-nfdi.github.io/BERD-Reinforcement-Learning/assignment2/" class="text-blue-500">
+                Assignment Unit 4
+            </a>
+        </div>
+    </div>
+</div></div>
+</div>
+</p>
+<p><div  class="relative !p-0"> 
+    <div id="meeting-information" class="absolute -top-[80px]">
+    </div>
+</div>
+
+<div class="flex flex-wrap  bg-white w-full px-4 sm:px-8 md:px-16 lg:px-32 mt-0 mb-0">
+    
+    <h3 class="text-xl font-bold w-full lg:w-3/5 mx-auto mt-0 mb-0">Meeting</h3>
+    
+    
+    <div class="text-[18px] leading-tight w-full lg:w-3/5 mx-auto mt-0 mb-0"><p><strong>July 15, 2025, 4:30pm – 5:30pm CEST</strong>*</p>
+<p>Please find the information on how to join the zoom meeting in the corresponding e-mail.</p>
+<p>*Note the timezone if you are joining from outside of Germany.</p>
+</div>
+</div>
+</p>
+<p><div  class="relative !p-0"> 
+    <div id="readings" class="absolute -top-[80px]">
+    </div>
+</div>
+
+<div class="flex flex-wrap  bg-grey w-full px-4 sm:px-8 md:px-16 lg:px-32 mt-0 mb-0">
+    
+    <h3 class="text-xl font-bold w-full lg:w-3/5 mx-auto mt-0 mb-0">Slides and Readings</h3>
+    
+    
+    <div class="text-[18px] leading-tight w-full lg:w-3/5 mx-auto mt-0 mb-0"><div class="w-full text-left" style="display: flex;">
+    <!-- Left vertical line -->
+    <div style="border-left: 2.5px solid #808285; padding-left: 16px;  margin-top: 10px">
+        <!-- Full report section -->
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <a class="text font-bold" style="text-decoration: none;">
+                Slides coming soon.
+            </a>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+            <a href="" download class="text-blue-500">
+            </a>
+        </div>
+        <br><br>
+        <!-- Citation section -->
+        <a class="text font-bold" style="text-decoration: none;">
+            Please find the required readings for this unit here:
+        </a>
+        <br><br>
+        <a class="text font-bold" style="text-decoration: none;">
+            Deep Neural Networks
+        </a>
+        <br>
+             <span>
+                Goodfellow (2016, chapters 6, 7, 8)
+            </span>
+        <br><br>
+         <a class="text font-bold" style="text-decoration: none;">
+            Deep Q-networks
+        </a>
+        <br>
+        <span>
+        Sutton and Barto (2018, section 9.4, 9.7) <br>
+        Szepesvari (2022, section 4.3.2) <br>
+        </span>
+         <br><br>
+         <a class="text font-bold" style="text-decoration: none;">
+            Policy Gradient Methods
+        </a>
+        <br>
+        <span>
+        Sutton and Barto (2018, section 13.1-13.3, 13.7) <br>
+        Sigaud and Buffet (2013, section 5.1-5.2) <br>
+        Russell and Norvig (2016, section 21.5) <br>
+        </span>
+         <br><br>
+         <a class="text font-bold" style="text-decoration: none;">
+            Actor Critic Algorithms
+        </a>
+        <br>
+        <span>
+        Sutton and Barto (2018, section 13.4-13.5) <br>
+        Szepesvari (2022, section 4.4) <br>
+        Sigaud and Buffet (2013, section 5.3) <br>
+        </span>
+        <br><br><br>
+        <span>
+        Goodfellow, I. (2016): Deep learning, vol. 196. MIT press.
+        </span>
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px; margin-bottom: 0px">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+           <a href="http://deeplearningbook.org/" download class="text-blue-500">
+               Available here.
+            </a>
+        </div>
+        <br><br>
+        <span>
+        Sutton, R. S., and A. G. Barto (2018): Reinforcement learning: An introduction, A Bradford Book.
+        </span>
+         <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px;">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+            <a href="http://incompleteideas.net/book/the-book-2nd.html" download class="text-blue-500">
+                Available here.
+            </a>
+        </div>
+        <br><br>
+         <span>
+        Szepesvari, C. (2022): Algorithms for reinforcement learning. Springer nature.
+        </span>
+        <div style="display: flex; align-items: center; justify-content: left; margin-top: 20px; margin-bottom: 0px">
+            <span style="margin-right: 16px;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9.52655H11.2609V2.76181H4.43671V0H14V9.52655Z" fill="#071A2D"/>
+                    <path d="M11.5818 0.368914L-0.000976562 12.0476L1.93586 14.0005L13.5186 2.32179L11.5818 0.368914Z" fill="#071A2D"/>
+                </svg>
+            </span>
+           <a href="https://sites.ualberta.ca/~szepesva/RLBook.html" download class="text-blue-500">
+               Available here.
+            </a>
+        </div>
+        <br><br>
+        <span>
+        Russell, S. J., and P. Norvig (2016): Artificial intelligence: a modern approach. Pearson.
+        </span>
+        <br><br>
+        <span>
+        Sigaud, O., and O. Buffet (2013): Markov decision processes in artificial intelligence. John Wiley & Sons.
+        </span>
+        <br>
+    </div>
+</div></div>
+</div>
+</p>
+<p><div  class="relative !p-0"> 
+    <div id="course-videos" class="absolute -top-[80px]">
+    </div>
+</div>
+
+<div class="flex flex-wrap  bg-white w-full px-4 sm:px-8 md:px-16 lg:px-32 mt-0 mb-0">
+    
+    <h3 class="text-xl font-bold w-full lg:w-3/5 mx-auto mt-0 mb-0">Course Videos</h3>
+    
+    
+    <div class="text-[18px] leading-tight w-full lg:w-3/5 mx-auto mt-0 mb-0"><p>Coming soon.</p>
+</div>
+</div>
+</p>
+
+        
+        
+    <!--/div -->
+</main>
+<script>
+    //remove empty <p></p> generated by Zola
+     var paragraphs = document.querySelectorAll("main > p");
+       for (var i = 0; i < paragraphs.length; i++) {
+        if (paragraphs[i].innerHTML==""){
+            paragraphs[i].remove();
+        }
+        
+    }
+</script>
+
+  
+  <footer class="bg-white text-primary py-6 px-6 md:px-16 lg:px-24 xl:px-24 z-40" aria-labelledby="footer-heading">
+    <h2 id="footer-heading" class="sr-only">Footer</h2>
+
+    <div class="flex flex-wrap justify-between items-start space-y-4 md:space-y-0"> <!-- flex-wrap added for wrapping -->
+        <!-- Contact Information -->
+        <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-8"> <!-- Column on small screens, row on larger screens -->
+            <!-- Email Section -->
+            <a href="mailto:berd-academy@stat.uni-muenchen.de" class="flex items-center text-base font-semibold leading-tight hover:text-accent">
+                <i class="fas fa-envelope mr-2"></i> <!-- Email icon -->
+                berd-academy@stat.uni-muenchen.de
+            </a>
+
+            <!-- LinkedIn Section -->
+            <a href="https://www.linkedin.com/school/berd-nfdi/" target="_blank" class="flex items-center text-base font-semibold leading-tight hover:text-accent">
+                <i class="fab fa-linkedin mr-2"></i> <!-- LinkedIn icon -->
+                @berd-nfdi
+            </a>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6"> <!-- Make links wrap and align properly -->
+            <a href="/impressum" class="text-base font-semibold leading-tight hover:text-accent">Impressum</a>
+        </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-gray-300 mt-6"></div>
+
+    <!-- Footer bottom -->
+    <div class="flex justify-between items-center pt-4">
+        <p class="text-sm leading-5">&copy; 2025 – BERD Academy. All rights reserved.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

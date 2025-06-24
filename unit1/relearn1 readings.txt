@@ -1,0 +1,15 @@
+Sutton and Barto (2018, sections 2.1-2.7, 2.9)
+Szepesvari (2022, sections 4.2.1-4.2.2)
+Kemper and Rostam-Afschar (2025)
+
+
+Sutton, R. S., and A. G. Barto (2018): Reinforcement learning: An
+introduction, A Bradford Book, Available at
+http://incompleteideas.net/book/the-book-2nd.html.
+
+Szepesvari, C. (2022): Algorithms for reinforcement learning. Springer
+nature, Available at
+https://sites.ualberta.ca/~szepesva/RLBook.html.
+
+Kemper, J. and D. Rostam-Afschar (2025): Earning While Learning:
+How to Run Batched Bandit Experiments, University of Mannheim.

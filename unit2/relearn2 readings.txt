@@ -1,0 +1,42 @@
+Markov Processes
+Russell and Norvig (2016, section 15.1)
+
+Markov decision processes
+Russell and Norvig (2016, sections 17.1-17.2, 17.4)
+Sutton and Barto (2018, chapter 3)
+Szepesvari (2022, chapter 2)
+Puterman (2014, chapters 2, 4, 5)
+
+Value Iteration
+Sutton and Barto (2018, sections 4.1, 4.4)
+Szepesvari (2022, sections 2.2, 2.3)
+Puterman (2014, sections 6.1-6.3)
+Sigaud and Buffet (2013, chapter 1)
+
+Policy Iteration
+Sutton and Barto (2018, section 4.3)
+Puterman (2014, sections 6.4-6.5)
+Russell and Norvig (2016, section 17.3)
+
+
+Russell, S. J., and P. Norvig (2016): Artificial intelligence: a modern approach. Pearson.
+
+Sutton, R. S., and A. G. Barto (2018): Reinforcement learning: An
+introduction, A Bradford Book, Available at
+http://incompleteideas.net/book/the-book-2nd.html.
+
+Szepesvari, C. (2022): Algorithms for reinforcement learning. Springer
+nature, Available at
+https://sites.ualberta.ca/~szepesva/RLBook.html.
+
+Puterman, M. L. (2014): Markov decision processes: discrete stochastic
+dynamic programming. John Wiley & Sons.
+
+Sigaud, O., and O. Buffet (2013): Markov decision processes in artificial
+intelligence. John Wiley & Sons.
+
+Markov, A. A. (2006): An Example of Statistical Investigation of the Text
+Eugene Onegin Concerning the Connection of Samples in Chains, Science in
+Context, 19(4), 591-600.
+
+Bellman, R. (1957): Dynamic Programming. Princeton University Press.
